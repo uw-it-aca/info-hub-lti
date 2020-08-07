@@ -1,0 +1,25 @@
+<!doctype html>
+<html class="no-js">
+<head>
+    <title>Information Hub BLTI Application</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="HandheldFriendly" content="true">
+
+    {% load staticfiles %}
+    {% load compress %}
+
+</head>
+<body>
+
+    <div id="wrapper" class="container" style="position:relative;">
+
+        <div id="main-wrapper">
+            <div id="main" aria-labelledby="uw_infohub_header">
+               <div class="inner">{% block content %}{% endblock %}</div>
+            </div><!--end #main-->
+        </div>
+    </div>
+
+</body>
+</html>
