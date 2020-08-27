@@ -2,7 +2,7 @@ from django.conf import settings
 from django.views.generic import TemplateView
 from blti.views import BLTILaunchView
 from time import time
-from urllib.parse import quote
+from urllib.parse import quote, unquote
 from oauthlib.common import generate_nonce
 from oauthlib.oauth1.rfc5849 import Client
 from oauthlib.oauth1.rfc5849.signature import (
@@ -15,8 +15,13 @@ class InfoHubView(BLTILaunchView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['login_id'] = self.request.POST.get(
-            'custom_canvas_user_login_id', "UNKNOWN"),
+
+        context['user_login_id'] = self.blti.user_login_id
+        context['user_full_name'] = self.blti.user_full_name
+        account_sis_id = self.blti.account_sis_id
+        context['is_seattle'] = account_sis_id[:16] == 'uwcourse:seattle'
+        context['is_tacoma'] = account_sis_id[:15] == 'uwcourse:tacoma'
+        context['is_bothell'] = account_sis_id[:16] == 'uwcourse:bothell'
 
         return context
 
@@ -64,18 +69,18 @@ class InfoHubDevLaunch(TemplateView):
         ("lis_course_offering_sourcedid", "2019-autumn-PSYCH-101-A"),
         ("lis_person_contact_email_primary", "javerage@u.washington.edu"),
         ("lis_person_name_family", "Average"),
-        ("lis_person_name_full", "James+Average"),
+        ("lis_person_name_full", "James Average"),
         ("lis_person_name_given", "James"),
         ("lis_person_sourcedid", "0C8F043FA5CBE23F2B1E1A63B1BD80B8"),
         ("lti_message_type", "basic-lti-launch-request"),
         ("lti_version", "LTI-1p0"),
         ("oauth_callback", "about:blank"),
         ("resource_link_id", "E9a206DC909a330e9F8eF183b7BB4B9718aBB62d"),
-        ("resource_link_title", "UW+Info+Hub"),
+        ("resource_link_title", "UW Info Hub"),
         ("tool_consumer_info_product_family_code", "canvas"),
-        ("tool_consumer_instance_name", "University+of+Washington"),
+        ("tool_consumer_instance_name", "University of Washington"),
         ("user_id", "e1ec31bd10a32f61dd65975ce4eb98e9f106bd7d"),
-        ("user_image", "%2Fimages%2Fthumbnails%2F1499380%2F24ZSCuR73P2mrG98Yq6gicMHjcd0p8NMhM2iGhgz"),
+        ("user_image", "/images/thumbnails/1499380/24ZSCuR73P2mrG98Yq6gicMHjcd0p8NMhM2iGhgz"),
     ]
 
     def get_context_data(self, **kwargs):
@@ -85,7 +90,9 @@ class InfoHubDevLaunch(TemplateView):
         lti_parameters = []
         lti_parameters.append(("roles", quote(self._lti_role[role])))
         lti_parameters.append(("ext_roles", quote(self._lti_ext_role[role])))
-        lti_parameters.append(("custom_canvas_account_sis_id", "uwcourse%3A{}%3Aarts-%26-sciences%3Apsych%3Apsych".format(campus)))
+        lti_parameters.append((
+            "custom_canvas_account_sis_id",
+            'uwcourse:{}:arts-&-sciences:psych:psych'.format(campus)))
         lti_parameters.append(("oauth_timestamp", str(int(time()))))
         lti_parameters.append(("oauth_nonce", generate_nonce()))
         lti_parameters += self._static_lti_parameters

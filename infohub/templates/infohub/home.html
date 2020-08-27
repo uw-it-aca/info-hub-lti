@@ -5,11 +5,17 @@
 {% block content %}
 <div class="canvas-infohub-container">
 
+  <p>Hello 
+  {% if is_seattle %}
+    Seattle
+  {% elif is_tacoma %}
+    Tacoma
+  {% elif is_bothell %}
+    Bothell
+  {% endif %}
 
+  <p>Welcome {{ user_full_name }} ({{ user_login_id }})</p>
 
-  <p>Hello world.</p>
-
-  <p>Welcome {{ login_id }}</p>
 
 </div>
 {% endblock %}
