@@ -9,11 +9,11 @@ from oauthlib.oauth1.rfc5849.signature import (
 
 
 class InfoHubDevPrepare(TemplateView):
-    template_name = 'infohub/develop.html'
+    template_name = 'infohub/dev/prepare.html'
 
 
 class InfoHubDevLaunch(TemplateView):
-    template_name = 'infohub/launch.html'
+    template_name = 'infohub/dev/launch.html'
 
     _lti_role = {
         'administrator': 'urn:lti:instrole:ims/lis/Administrator',
