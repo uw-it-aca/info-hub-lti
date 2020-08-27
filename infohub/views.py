@@ -17,9 +17,14 @@ class InfoHubView(BLTILaunchView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
 
+        account_sis_id = self.blti.account_sis_id
         context['user_login_id'] = self.blti.user_login_id
         context['user_full_name'] = self.blti.user_full_name
-        account_sis_id = self.blti.account_sis_id
+        context['account_sis_id'] = account_sis_id
+        context['canvas_account_id'] = self.blti.canvas_account_id
+        context['course_sis_id'] = self.blti.course_sis_id
+        context['course_long_name'] = self.blti.data.get('context_title', '')
+        context['canvas_course_id'] = self.blti.canvas_course_id
         context['is_seattle'] = account_sis_id[:16] == 'uwcourse:seattle'
         context['is_tacoma'] = account_sis_id[:15] == 'uwcourse:tacoma'
         context['is_bothell'] = account_sis_id[:16] == 'uwcourse:bothell'
