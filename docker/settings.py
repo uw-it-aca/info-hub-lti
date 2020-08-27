@@ -9,6 +9,11 @@ INSTALLED_APPS += [
     'infohub',
 ]
 
+MIDDLEWARE = ['blti.middleware.SessionHeaderMiddleware',
+              'blti.middleware.CSRFHeaderMiddleware',] +\
+              MIDDLEWARE +\
+              ['userservice.user.UserServiceMiddleware',]
+
 COMPRESS_ENABLED = True
 COMPRESS_OFFLINE = True
 COMPRESS_ROOT = '/static/'
@@ -40,6 +45,45 @@ DETECT_USER_AGENTS = {
     'is_mobile': False,
     'is_desktop': True,
 }
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'filters': {
+        'stdout_stream': {
+            '()': 'django.utils.log.CallbackFilter',
+            'callback': lambda record: record.levelno < logging.WARN
+        },
+        'stderr_stream': {
+            '()': 'django.utils.log.CallbackFilter',
+            'callback': lambda record: record.levelno > logging.INFO
+        }
+    },
+    'formatters': {
+    },
+    'handlers': {
+        'stdout': {
+            'class': 'logging.StreamHandler',
+            'stream': sys.stdout,
+            'filters': ['stdout_stream']
+        },
+        'stderr': {
+            'class': 'logging.StreamHandler',
+            'stream': sys.stderr,
+            'filters': ['stderr_stream']
+        },
+    },
+    'loggers': {
+        'oauthlib': {
+            'handlers': ['stdout', 'stderr'],
+        },
+        '': {
+            'handlers': ['stdout', 'stderr'],
+            'level': 'INFO' if os.getenv('ENV', 'dev') == 'prod' else 'DEBUG'
+        }
+    }
+}
+
 
 # BLTI consumer key:secret pairs in env as "k1=val1,k2=val2"
 LTI_CONSUMERS = json.loads(os.getenv("LTI_CONSUMERS", "{}"))
