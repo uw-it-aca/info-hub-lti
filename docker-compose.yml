@@ -5,6 +5,8 @@ services:
     environment:
       ENV: localdev
       PORT: 8000
+      AUTH: BLTI
+      LTI_DEVELOP_APP: infohub
       LTI_CONSUMERS: '{"0000-0000-0000": "01234567ABCDEF"}'
       BLTI_AES_KEY: "AE91AE1DF0E6FB44"
       BLTI_AES_IV: "01C8837249AE8667"
