@@ -16,6 +16,21 @@
 
   <p>Welcome {{ user_full_name }} ({{ user_login_id }})</p>
 
+  <p>
+  Looks like you're
+  {% if is_instructor %}
+  an instructor
+  {% endif %}
+  {% if is_ta %}
+  a Teaching Assistant
+  {% endif %}
+  {% if is_student %}
+  a Student
+  {% endif %}
+  {% if is_admin %}
+  an admin
+  {% endif %}
+  </p>
 
 </div>
 {% endblock %}

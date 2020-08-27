@@ -1,10 +1,11 @@
 from django.conf import settings
 from django.views.generic import TemplateView
-from blti.views import BLTILaunchView
 from time import time
-from urllib.parse import quote, unquote
 from oauthlib.common import generate_nonce
 from oauthlib.oauth1.rfc5849 import Client
+from blti import BLTIException
+from blti.views import BLTILaunchView
+from blti.validators import Roles
 from oauthlib.oauth1.rfc5849.signature import (
     base_string_uri, signature_base_string,
     normalize_parameters, sign_hmac_sha1_with_client)
@@ -22,6 +23,33 @@ class InfoHubView(BLTILaunchView):
         context['is_seattle'] = account_sis_id[:16] == 'uwcourse:seattle'
         context['is_tacoma'] = account_sis_id[:15] == 'uwcourse:tacoma'
         context['is_bothell'] = account_sis_id[:16] == 'uwcourse:bothell'
+        try:
+            Roles()._has_role(self.blti, ['Instructor'])
+            context['is_instructor'] = True
+        except BLTIException:
+            context['is_instructor'] = False
+            pass
+
+        try:
+            Roles()._has_role(self.blti, ['TeachingAssistant'])
+            context['is_ta'] = True
+        except BLTIException:
+            context['is_ta'] = False
+            pass
+
+        try:
+            Roles()._has_role(self.blti, ['Learner'])
+            context['is_student'] = True
+        except BLTIException:
+            context['is_student'] = False
+            pass
+
+        try:
+            Roles()._has_role(self.blti, ['Administrator'])
+            context['is_admin'] = True
+        except BLTIException:
+            context['is_admin'] = False
+            pass
 
         return context
 
@@ -88,8 +116,8 @@ class InfoHubDevLaunch(TemplateView):
         campus = self.request.GET.get('campus', '')
 
         lti_parameters = []
-        lti_parameters.append(("roles", quote(self._lti_role[role])))
-        lti_parameters.append(("ext_roles", quote(self._lti_ext_role[role])))
+        lti_parameters.append(("roles", self._lti_role[role]))
+        lti_parameters.append(("ext_roles", self._lti_ext_role[role]))
         lti_parameters.append((
             "custom_canvas_account_sis_id",
             'uwcourse:{}:arts-&-sciences:psych:psych'.format(campus)))
@@ -97,12 +125,12 @@ class InfoHubDevLaunch(TemplateView):
         lti_parameters.append(("oauth_nonce", generate_nonce()))
         lti_parameters += self._static_lti_parameters
 
-
         # calculate signature
         raw_uri = self.request.build_absolute_uri()
         uri = raw_uri[0:raw_uri.index('/infohub') + 8]
-        sbs = signature_base_string(
-            'POST', base_string_uri(uri), normalize_parameters(lti_parameters))
+        sbs = signature_base_string('POST',
+                                    base_string_uri(uri),
+                                    normalize_parameters(lti_parameters))
         client_key = '0000-0000-0000'
         client_secrets = getattr(settings, 'LTI_CONSUMERS', {})
         client = Client(client_key, client_secret=client_secrets[client_key])
