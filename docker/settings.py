@@ -11,8 +11,7 @@ INSTALLED_APPS += [
 
 MIDDLEWARE = ['blti.middleware.SessionHeaderMiddleware',
               'blti.middleware.CSRFHeaderMiddleware',] +\
-              MIDDLEWARE +\
-              ['userservice.user.UserServiceMiddleware',]
+              MIDDLEWARE
 
 COMPRESS_ENABLED = True
 COMPRESS_OFFLINE = True
