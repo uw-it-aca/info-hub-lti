@@ -1,7 +1,6 @@
 from django.conf import settings
 from django.views.generic import TemplateView
-from time import time
-from oauthlib.common import generate_nonce
+from oauthlib.common import generate_timestamp, generate_nonce
 from oauthlib.oauth1.rfc5849 import Client
 from oauthlib.oauth1.rfc5849.signature import (
     base_string_uri, signature_base_string,
@@ -96,7 +95,7 @@ class InfoHubDevLaunch(TemplateView):
         lti_parameters.append((
             "custom_canvas_account_sis_id",
             'uwcourse:{}:arts-&-sciences:psych:psych'.format(campus)))
-        lti_parameters.append(("oauth_timestamp", str(int(time()))))
+        lti_parameters.append(("oauth_timestamp", generate_timestamp()))
         lti_parameters.append(("oauth_nonce", generate_nonce()))
         lti_parameters += self._static_lti_parameters
 
