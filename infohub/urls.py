@@ -7,7 +7,7 @@ urlpatterns = [
 ]
 
 if getattr(settings, "DEBUG", False):
-    from infohub.views import InfoHubDevPrepare, InfoHubDevLaunch
+    from infohub.views.dev import InfoHubDevPrepare, InfoHubDevLaunch
     urlpatterns += [
         re_path(r'dev[/]?$', InfoHubDevPrepare.as_view()),
         re_path(r'dev/launch[/]?', InfoHubDevLaunch.as_view()),
