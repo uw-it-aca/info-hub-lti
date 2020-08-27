@@ -74,10 +74,30 @@ class InfoHubDevLaunch(TemplateView):
     }
 
     _lti_ext_role = {
-        'administrator': 'urn:lti:instrole:ims/lis/Administrator,urn:lti:instrole:ims/lis/Instructor,urn:lti:instrole:ims/lis/Student,urn:lti:role:ims/lis/Learner,urn:lti:role:ims/lis/Learner/NonCreditLearner,urn:lti:role:ims/lis/Mentor,urn:lti:sysrole:ims/lis/Useurn:lti:instrole:ims/lis/Administrator,urn:lti:instrole:ims/lis/Instructor,urn:lti:instrole:ims/lis/Student,urn:lti:role:ims/lis/Learner,urn:lti:role:ims/lis/Learner/NonCreditLearner,urn:lti:role:ims/lis/Mentor,urn:lti:sysrole:ims/lis/User',
-        'instructor': 'urn:lti:instrole:ims/lis/Instructor,urn:lti:instrole:ims/lis/Student,urn:lti:role:ims/lis/Instructor,urn:lti:sysrole:ims/lis/User',
-        'ta': 'urn:lti:instrole:ims/lis/Instructor,urn:lti:instrole:ims/lis/Student,urn:lti:role:ims/lis/Instructor,urn:lti:role:ims/lis/TeachingAssistant,urn:lti:sysrole:ims/lis/User',
-        'student': 'urn:lti:instrole:ims/lis/Student,urn:lti:role:ims/lis/Learner,urn:lti:sysrole:ims/lis/User'
+        'administrator': 'urn:lti:instrole:ims/lis/Administrator,'
+        + 'urn:lti:instrole:ims/lis/Instructor,'
+        + 'urn:lti:instrole:ims/lis/Student,'
+        + 'urn:lti:role:ims/lis/Learner,'
+        + 'urn:lti:role:ims/lis/Learner/NonCreditLearner,'
+        + 'urn:lti:role:ims/lis/Mentor,'
+        + 'urn:lti:sysrole:ims/lis/Useurn:lti:'
+        + 'instrole:ims/lis/Administrator,'
+        + 'urn:lti:instrole:ims/lis/Instructor,'
+        + 'urn:lti:instrole:ims/lis/Student,urn:lti:role:ims/lis/Learner,'
+        + 'urn:lti:role:ims/lis/Learner/NonCreditLearner,'
+        + 'urn:lti:role:ims/lis/Mentor,'
+        + 'urn:lti:sysrole:ims/lis/User',
+        'instructor': 'urn:lti:instrole:ims/lis/Instructor,'
+        + 'urn:lti:instrole:ims/lis/Student,'
+        + 'urn:lti:role:ims/lis/Instructor,'
+        + 'urn:lti:sysrole:ims/lis/User',
+        'ta': 'urn:lti:instrole:ims/lis/Instructor,'
+        + 'urn:lti:instrole:ims/lis/Student,'
+        + 'urn:lti:role:ims/lis/Instructor,'
+        + 'urn:lti:role:ims/lis/TeachingAssistant,'
+        + 'urn:lti:sysrole:ims/lis/User',
+        'student': 'urn:lti:instrole:ims/lis/Student,'
+        + 'urn:lti:role:ims/lis/Learner,urn:lti:sysrole:ims/lis/User'
     }
 
     _static_lti_parameters = [
@@ -113,7 +133,8 @@ class InfoHubDevLaunch(TemplateView):
         ("tool_consumer_info_product_family_code", "canvas"),
         ("tool_consumer_instance_name", "University of Washington"),
         ("user_id", "e1ec31bd10a32f61dd65975ce4eb98e9f106bd7d"),
-        ("user_image", "/images/thumbnails/1499380/24ZSCuR73P2mrG98Yq6gicMHjcd0p8NMhM2iGhgz"),
+        ("user_image", '/images/thumbnails/1499380/'
+         + '24ZSCuR73P2mrG98Yq6gicMHjcd0p8NMhM2iGhgz'),
     ]
 
     def get_context_data(self, **kwargs):
