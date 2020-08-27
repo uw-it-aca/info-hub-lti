@@ -9,6 +9,13 @@
     {% load staticfiles %}
     {% load compress %}
 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    {% compress css %}
+    <link rel="stylesheet" type="text/less" href="{% static "infohub/css/mobile.less" %}" media="screen, handheld" />
+    <link rel="stylesheet" type="text/less" href="{% static "infohub/css/desktop.less" %}" media="screen and (min-width: 480px)" />
+    <link rel="stylesheet" type="text/less" href="{% static "infohub/css/blti.less" %}" media="screen and (min-width: 480px)" />
+    {% endcompress %}
+
 </head>
 <body>
 
