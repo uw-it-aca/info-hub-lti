@@ -1,4 +1,4 @@
-FROM acait/django-container:1.1.0 as app-container
+FROM acait/django-container:1.1.1 as app-container
 
 ADD --chown=acait:acait infohub/VERSION /app/infohub/
 ADD --chown=acait:acait setup.py /app/

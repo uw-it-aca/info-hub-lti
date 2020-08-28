@@ -59,16 +59,3 @@ cache:
   directories:
     - "$HOME/helm"
     - "$HOME/kubeval"
-
-before_deploy:
-  - find infohub/ -name \*.pyc -exec rm {} \;
-  - echo $TRAVIS_TAG > infohub/VERSION
-deploy:
-  provider: pypi
-  user: uw-it-aca
-  skip_cleanup: true
-  password:
-    secure:
-  on:
-    tags: true
-    python: '3.6'
