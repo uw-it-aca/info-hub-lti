@@ -18,9 +18,9 @@ env:
     - COMMIT_HASH="$(git rev-parse --short=7 HEAD)"
     - IMAGE_TAG="${RELEASE_NAME}:${COMMIT_HASH}"
     - DEPLOY_SCRIPT_BASE=https://raw.githubusercontent.com/uw-it-aca/gcp-app-deploy/master
-    - secure: ""
-    - secure: ""
-    - secure: ""
+    - secure: "B1zcwW72W7R7ZHUrYyn06G+HPv0JiFOmJTA/BLHJdaepljiGnyGw1ifL/M0pg0hhBOG7Ms5mvOw6USzrwKxRgxWYfxSCbUNNVBdWAKJDNWlAzhqjPlSMRWS008GcKXRGiti6sGWxet6Y/8ZtG+KvGOdkl+1VVeHA11vU/sTy+cuP9LANJgh4/kFCLz/tCKXZbOIvIOLsiOvxH6wam7ucljI1MY3qPZYn607+JD1zclJAmkeMtHaEZcAmJ5hcpmr5ImrZ7FCwgHhfQIOvIW1WBM+hukhET6ICX6fdevKV2UXJ0RXX0jReABqmPNEbcpVOdrPXwG+QDgk9Wvwx5/aB2aOMLtBWu1adL45Beuq+NTQhQ+fK9gnU5nK4u+Pbecz2MZxeZorENBj/QPGrPhwTmS7efOoY53RpiK4h7FmZoiCNFRCClKPX95XE1O+wy0pTmy/itWtl+G7TEnsXbEtbOe4benWnB/3HyM8EFs5oVu6licAWjUmHcAyGIHe7Xjl2cUhc3ZPVAopr/fqL97VaLEXAjBZnRd6xvT/tV9Y0eM1qZ8qxFfxY5G904pgjFwkMkTtexbns8ipka6875WrbblaHUYh/Psd1dSFQ49WejZWOsjbVyatEGhQBglU1Fsroa7+JFQ9nvLKAkJdAmDIZqigHReYEXrzlSAZmkHMrwGY="
+    - secure: "iR917wFtFO2eWBHoV5VaeIj8jhUQW+MCCJsNqO2L4QPRHA1DhBLrybinFEy7yLlxcjtvWTdQ5Ka5p8FHm+Mm7VJBZtPXvX3d7i/aBQs9gO2W6dk4LTJ1+9zKADxDG9Tw88hdZuUG773GwUjhiKFWbUzRtDGbzvQVjNs0Qj6Px7IlK4TRK0Uew0DYJfTQLI4NoD2osAgMADMvM5vvGTxsAJmcxyZcCMaUBixY5GHLb6WacJnU/4FoK/XqNywJYW1mPhbb8xUagVHarsNXynw1V0owbusfXL1fnMNbHbxsI13lVSdJs+DmsYRe6P6MumzehcF538Qc0dHurQW96Cv8fgpx7qK4dMXakw5F5FsdP1ohw5ASp/w0ZHKTywmUVHt+M2Xd447fJBj6V7cSwQeu+xgJmMpVOM2fdgxhTLqJEiEAEFsAlJXiCmM9facJx/cVn5XLsg67L8hy+0Bm/yh1CEy7vJK6Huamin5SWQSw1L59SolxvDsnijvZonVaWxqfHuRPn2Q0AHOO7JtNpQ3XqIMIkANmYe3l0e6j8MHtV936iEgVC1+uObeDY2mBfRJ9hCZqJFVbdm5QB2Uk4cAseW2Mnojp/JfhPGuCenuovbRQID6CsXqCLfL8BteMGAahXVfJYZwQ3g7jnjYqnUFPlykO2d4O6prDPwJBBk1nj/c="
+    - secure: "KSmSSKg1JDkBMbZDq332fOuk/cpoHoZMJUEFgehlU+dLAioyl6jtOcdNmK7ogjQOFDsNYk0/rVMCfcm1Mk7CpszNMjiewFk1nAP+e127oHxc4Sr0Ejg1AObQXDzIDSX2vfyUa2EGQgFoIdQr9RdFVQROjCQ0EXGzRJV/5BSXvnAAX/nsm64JbyHiUbxL7UEKZ6NxtS9wg1+4TJxzD6AVrbJ5/phTisfEIKUvKXGoj2NgPU4/VqYYb5stHaHZpyp4BbxCEU+42CtIYs+sA0GQ9bjCv1OsLoCOO9jRH9ZApp/H9wc4Vwl5AqkbfLchyoz7bAHUoBEDsz56cWFB2S7x4/Pn+mKPspza1y5TV8uw1JKnBKzmvasYyvbV1kROFBlnrSGif68+SC5ebbRo4zvjUuFnB88ZWyFvGwHc/mhCWGUQd2N0k3dzA6K6TxPrGKxEfFWCdhThriCo1CpXRYhuOwaWUsXjltpT/jUjUYSXbajaZmB/RR7s7soNYdTgej2Q2aJ/qCa4ytEmr+fbFO6dJGivi6kyJLa/F+VNBPZwV+/c2pFX3PQ8+83lbDlHBzz5GEzqnpGZg8lTT9K/Ce5fIbFsj3G/URoEp7W2g7MO/sRe22zQl2rZ5knU0KF03UCesYpxCz9czi44GJI64WwjJrOPJbQCqUVJ6kl0Wk2N8bA="
 
 install:
   - docker build --target app-container -t "$IMAGE_TAG" .
@@ -31,7 +31,7 @@ before_script:
   - pip install coveralls
 
 script:
-  - docker run -u root -it -v /tmp:/coverage -e DJANGO_APP="$DJANGO_APP" -e "ENV=localdev" -e "AUTH=BLTI" -e "LTI_CONSUMERS='{"0000-0000-0000": "01234567ABCDEF"}'" -e "BLTI_AES_KEY=AE91AE1DF0E6FB44" -e "BLTI_AES_IV=01C8837249AE8667" app-test-container bash -c ". ./travis-ci/test.sh"
+  - docker run -u root -it -v /tmp:/coverage -e DJANGO_APP="$DJANGO_APP" -e "ENV=localdev" -e "AUTH=BLTI_TEST" app-test-container bash -c ". ./travis-ci/test.sh"
 
 after_success:
   - cp /tmp/.coverage.* .
