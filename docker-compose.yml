@@ -1,4 +1,4 @@
-version: '2'
+version: '3.4'
 
 services:
   app:
@@ -11,6 +11,7 @@ services:
     container_name: app-infohub
     build:
       context: .
+      target: app-container
     volumes:
       - ./infohub:/app/infohub
     ports:

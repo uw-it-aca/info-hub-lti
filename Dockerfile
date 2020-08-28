@@ -14,3 +14,10 @@ ADD --chown=acait:acait . /app/
 ADD --chown=acait:acait docker/ project/
 
 RUN . /app/bin/activate && python manage.py compress -f && python manage.py collectstatic --noinput
+
+FROM acait/django-test-container:1.1.1 as app-test-container
+
+ENV NODE_PATH=/app/lib/node_modules
+
+COPY --from=app-container /app/ /app/
+COPY --from=app-container /static/ /static/
