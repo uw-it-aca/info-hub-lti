@@ -21,7 +21,7 @@ setup(
     include_package_data=True,
     install_requires=[
         'Django>=2.1,<2.2',
-        'django-blti>=2.1.7',
+        'django-blti>=2.1.8',
         'python-memcached',
     ],
     license='Apache License, Version 2.0',
