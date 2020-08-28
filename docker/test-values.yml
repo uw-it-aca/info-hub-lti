@@ -37,7 +37,7 @@ database:
 repo: infohub
 instance: test
 image:
-  repository: registry.hub.docker.com/acait/info-hub-lti
+  repository: registry.hub.docker.com/acait/infohub
   tag: IMAGE_TAG
 memcached:
   enabled: true
