@@ -45,6 +45,8 @@ memcached:
   updateStrategy:
     type: RollingUpdate
 environmentVariables:
+  - name: CLUSTER_CNAME
+    value: test-infohub.canvas.uw.edu
   - name: AUTH
     value: BLTI
   - name: ENV
