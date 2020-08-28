@@ -1,27 +1,61 @@
-sudo: false
+sudo: required
+
 language: python
 python:
-- '3.6'
+  - 3.6
+
+services:
+  - docker
+  - memcached
+
+os:
+  - linux
+
+env:
+  global:
+    - RELEASE_NAME="infohub"
+    - DJANGO_APP="infohub"
+    - COMMIT_HASH="$(git rev-parse --short=7 HEAD)"
+    - IMAGE_TAG="${RELEASE_NAME}:${COMMIT_HASH}"
+    - DEPLOY_SCRIPT_BASE=https://raw.githubusercontent.com/uw-it-aca/gcp-app-deploy/master
+    - secure: ""
+    - secure: ""
+    - secure: ""
+
+install:
+  - docker build --target app-container -t "$IMAGE_TAG" .
+  - docker build -t app-test-container .
+
 before_script:
-- pip install -e .
-- pip install coverage
-- pip install coveralls
-- pip install pycodestyle
-- cp travis-ci/manage.py manage.py
+  - pip install coverage
+  - pip install coveralls
+
 script:
-- pycodestyle infohub/
-- coverage run --source=infohub/ manage.py test infohub
+  - docker run -u root -it -v /tmp:/coverage -e DJANGO_APP="$DJANGO_APP" -e "ENV=localdev" -e "AUTH=BLTI" -e "LTI_CONSUMERS='{"0000-0000-0000": "01234567ABCDEF"}'" -e "BLTI_AES_KEY=AE91AE1DF0E6FB44" -e "BLTI_AES_IV=01C8837249AE8667" app-test-container bash -c ". ./travis-ci/test.sh"
+
 after_success:
-- coveralls
-before_deploy:
-- find infohub/ -name \*.pyc -exec rm {} \;
-- echo $TRAVIS_TAG > infohub/VERSION
-deploy:
-  provider: pypi
-  user: uw-it-aca
-  skip_cleanup: true
-  password:
-    secure:
-  on:
-    tags: true
-    python: '3.6'
+  - cp /tmp/.coverage.* .
+  - coverage combine
+  - coveralls
+  - |
+    if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
+      case "$TRAVIS_BRANCH" in
+        "master")
+          export APP_INSTANCE="prod";
+          ;;
+        "develop")
+          export APP_INSTANCE="test";
+          ;;
+        *)
+          unset APP_INSTANCE
+          ;;
+      esac
+      if [[ "$APP_INSTANCE" ]]; then
+        curl -Ls ${DEPLOY_SCRIPT_BASE}/travis-ci/deploy.sh | bash;
+      fi
+    fi
+
+cache:
+  directories:
+    - "$HOME/helm"
+    - "$HOME/kubeval"
