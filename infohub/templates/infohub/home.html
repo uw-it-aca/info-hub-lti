@@ -5,7 +5,157 @@
 {% block content %}
 <div class="canvas-infohub-container">
 
-  <p>Hello 
+  <div class="container mt-4">
+
+    <div class="row">
+      <div class="col">
+        <h1 class="h2 mb-5">Instructor Resources</h1>
+
+        <div class="h3 text-center">Welcome, {{ user_full_name }} ({{ user_login_id }})</div>
+        <p class="lead mb-5 text-center">Explore different resources that will help you design your course and teach remotely!</p>
+      </div>
+    </div>
+
+    <h2 class="h4 mb-4">Class Resources</h2>
+
+    <div class="row mb-5">
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-header">
+            <h3 class="h5 text-center">Congfiguration</h3>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <a href="#" class="d-block">
+                <h4 class="h6">Add People</h4>
+                <p class="text-dark">Add students, teachers, and more to your course.</p>
+              </a>
+            </li>
+            <li class="list-group-item">
+              <a href="#" class="d-block">
+                <h4 class="h6">Manage UW Groups</h4>
+                <p class="text-dark">Manage and add UW groups to your course.</p>
+              </a>
+            </li>
+            <li class="list-group-item">
+              <a href="#" class="d-block">
+                <h4 class="h6">Apply Templates</h4>
+                <p class="text-dark">View and apply templates that will help create courses that are easy for students to navigate.</p>
+              </a>
+            </li>
+            <li class="list-group-item">
+              <a href="#" class="d-block">
+                <h4 class="h6">4.0 Grade Scale</h4>
+                <p class="text-dark">Create a grade scale for your Canvas assignments.</p>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-header">
+            <h3 class="h5 text-center">Data</h3>  
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <a href="#" class="d-block">
+                <h4 class="h6">Photo Class List</h4>
+                <p class="text-dark">View photos of students from your Canvas course.</p>
+              </a>
+            </li>
+            <li class="list-group-item">
+              <a href="#" class="d-block">
+                <h4 class="h6">Course Accessibility Report</h4>
+                <p class="text-dark">Check course content for accessibility issues.</p>               
+              </a>
+            </li>
+            <li class="list-group-item">
+              <a href="#" class="d-block">
+                <h4 class="h6">MyUW Classlist</h4>
+                <p class="text-dark">View students in your course.</p>
+              </a>
+            </li>
+            <li class="list-group-item">
+              <a href="#" class="d-block">
+                <h4 class="h6">MyUW Course Instructor Dashboard</h4>
+                <p class="text-dark">View aggregated data from courses you’re teaching.</p>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-header">
+            <h3 class="h5 text-center">Tools</h3>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <a href="#" class="d-block">
+                <h4 class="h6">Zoom</h4>
+                <p class="text-dark">Schedule and start online class sessions.</p>
+              </a>
+            </li>
+            <li class="list-group-item">
+              <a href="#" class="d-block">
+                <h4 class="h6">Panopto Recording Scheduler</h4>
+                <p class="text-dark">Schedule lecture recordings for your course with Panopto.</p>
+              </a>
+            </li>
+            <li class="list-group-item">
+              <a href="#" class="d-block">
+                <h4 class="h6">Panopto Recordings</h4>
+                <p class="text-dark">View previous Panopto Recordings.</p>
+              </a>
+            </li>
+            <li class="list-group-item">
+              <a href="#" class="d-block">
+                <h4 class="h6">Poll Everywhere</h4>
+                <p class="text-dark">Create poll responses for your classes.</p>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="h4 mb-4">Teaching Resources</h2>
+
+    <div class="row mb-3">
+      <div class="col">
+        <div class="card">
+          <div class="card-header">
+            <h3 class="h5 text-center">Remote Teaching</h3>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <a href="#" class="d-block">
+                <h4 class="h6">Teaching Remotely</h4>
+                <p class="text-dark">Learn best practices for effective remote instruction.</p>
+              </a>
+            </li>
+            <li class="list-group-item">
+              <a href="#" class="d-block">
+                <h4 class="h6">Teaching with UW Technologies</h4>
+                <p class="text-dark">Learn more about technology you can use to support online instruction.</p>
+              </a>
+            </li>
+            <li class="list-group-item">
+              <a href="#" class="d-block">
+                <h4 class="h6">Workshops</h4>
+                <p class="text-dark">Participate in workshops on Canvas, Zoom, and Panopto</p>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+  <p class="text-dark">Campus: 
   {% if is_seattle %}
     Seattle
   {% elif is_tacoma %}
@@ -13,10 +163,9 @@
   {% elif is_bothell %}
     Bothell
   {% endif %}
+</p>
 
-  <p>Welcome {{ user_full_name }} ({{ user_login_id }})</p>
-
-  <p>
+  <p class="text-dark">
   Looks like you're
 
   {% if is_instructor %}
