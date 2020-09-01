@@ -12,7 +12,8 @@
         <h1 class="h2 mb-5">Instructor Resources</h1>
 
         <div class="h3 text-center">Welcome, {{ user_full_name }} ({{ user_login_id }})</div>
-        <p class="lead mb-5 text-center">Explore different resources that will help you design your course and teach remotely!</p>
+        <p class="lead mb-5 text-center">Explore different resources that will help you design your course and teach
+          remotely!</p>
       </div>
     </div>
 
@@ -21,8 +22,8 @@
     <div class="row mb-5">
       <div class="col-md-4">
         <div class="card">
-          <div class="card-header">
-            <h3 class="h5 text-center">Congfiguration</h3>
+          <div class="card-header p-2">
+            <h3 class="h5 m-0 text-center">Congfiguration</h3>
           </div>
           <ul class="list-group list-group-flush">
             <li class="list-group-item">
@@ -40,7 +41,8 @@
             <li class="list-group-item">
               <a href="#" class="d-block">
                 <h4 class="h6">Apply Templates</h4>
-                <p class="text-dark">View and apply templates that will help create courses that are easy for students to navigate.</p>
+                <p class="text-dark">View and apply templates that will help create courses that are easy for students
+                  to navigate.</p>
               </a>
             </li>
             <li class="list-group-item">
@@ -54,8 +56,8 @@
       </div>
       <div class="col-md-4">
         <div class="card">
-          <div class="card-header">
-            <h3 class="h5 text-center">Data</h3>  
+          <div class="card-header p-2">
+            <h3 class="h5 m-0 text-center">Data</h3>
           </div>
           <ul class="list-group list-group-flush">
             <li class="list-group-item">
@@ -67,7 +69,7 @@
             <li class="list-group-item">
               <a href="#" class="d-block">
                 <h4 class="h6">Course Accessibility Report</h4>
-                <p class="text-dark">Check course content for accessibility issues.</p>               
+                <p class="text-dark">Check course content for accessibility issues.</p>
               </a>
             </li>
             <li class="list-group-item">
@@ -86,37 +88,58 @@
         </div>
       </div>
       <div class="col-md-4">
-        <div class="card">
-          <div class="card-header">
-            <h3 class="h5 text-center">Tools</h3>
+
+        <h3 class="h5 text-center">Tools</h3>
+
+        <div class="accordion" id="accordionExample">
+          <div class="card">
+            <div class="card-header" id="headingOne" data-toggle="collapse"
+                  data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                <a href="/">Zoom</a>
+                <p>Schedule and start online class sessions.</p>
+            </div>
+
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+              <div class="card-body">
+                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf
+                moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+              </div>
+            </div>
           </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">
-              <a href="#" class="d-block">
-                <h4 class="h6">Zoom</h4>
-                <p class="text-dark">Schedule and start online class sessions.</p>
-              </a>
-            </li>
-            <li class="list-group-item">
-              <a href="#" class="d-block">
-                <h4 class="h6">Panopto Recording Scheduler</h4>
-                <p class="text-dark">Schedule lecture recordings for your course with Panopto.</p>
-              </a>
-            </li>
-            <li class="list-group-item">
-              <a href="#" class="d-block">
-                <h4 class="h6">Panopto Recordings</h4>
-                <p class="text-dark">View previous Panopto Recordings.</p>
-              </a>
-            </li>
-            <li class="list-group-item">
-              <a href="#" class="d-block">
-                <h4 class="h6">Poll Everywhere</h4>
-                <p class="text-dark">Create poll responses for your classes.</p>
-              </a>
-            </li>
-          </ul>
+          <div class="card">
+            <div class="card-header" id="headingTwo">
+              <h2 class="mb-0">
+                <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse"
+                  data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  Collapsible Group Item #2
+                </button>
+              </h2>
+            </div>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+              <div class="card-body">
+                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf
+                moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingThree">
+              <h2 class="mb-0">
+                <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse"
+                  data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  Collapsible Group Item #3
+                </button>
+              </h2>
+            </div>
+            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+              <div class="card-body">
+                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf
+                moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+              </div>
+            </div>
+          </div>
         </div>
+
       </div>
     </div>
 
@@ -125,8 +148,8 @@
     <div class="row mb-3">
       <div class="col">
         <div class="card">
-          <div class="card-header">
-            <h3 class="h5 text-center">Remote Teaching</h3>
+          <div class="card-header p-2">
+            <h3 class="h5 m-0 text-center">Remote Teaching</h3>
           </div>
           <ul class="list-group list-group-flush">
             <li class="list-group-item">
@@ -155,36 +178,36 @@
   </div>
 
 
-  <p class="text-dark">Campus: 
-  {% if is_seattle %}
+  <p class="text-dark">Campus:
+    {% if is_seattle %}
     Seattle
-  {% elif is_tacoma %}
+    {% elif is_tacoma %}
     Tacoma
-  {% elif is_bothell %}
+    {% elif is_bothell %}
     Bothell
-  {% endif %}
-</p>
+    {% endif %}
+  </p>
 
   <p class="text-dark">
-  Looks like you're
+    Looks like you're
 
-  {% if is_instructor %}
-  an instructor
-  {% endif %}
+    {% if is_instructor %}
+    an instructor
+    {% endif %}
 
-  {% if is_ta %}
-  a Teaching Assistant
-  {% endif %}
+    {% if is_ta %}
+    a Teaching Assistant
+    {% endif %}
 
-  {% if is_student %}
-  a Student
-  {% endif %}
+    {% if is_student %}
+    a Student
+    {% endif %}
 
-  {% if is_admin %}
-  an admin
-  {% endif %}
-  in
-  {{ course_long_name }} ({{ canvas_course_id }})
+    {% if is_admin %}
+    an admin
+    {% endif %}
+    in
+    {{ course_long_name }} ({{ canvas_course_id }})
   </p>
 
 </div>
