@@ -5,6 +5,36 @@
 {% block content %}
 <div class="canvas-infohub-container">
 
+  <p class="m-0 text-dark">Campus:
+    {% if is_seattle %}
+    Seattle
+    {% elif is_tacoma %}
+    Tacoma
+    {% elif is_bothell %}
+    Bothell
+    {% endif %}
+  </p>
+
+  <p class="m-0 text-dark">Role:
+    {% if is_instructor %}
+    Instructor
+    {% endif %}
+
+    {% if is_ta %}
+    Teaching Assistant
+    {% endif %}
+
+    {% if is_student %}
+    Student
+    {% endif %}
+
+    {% if is_admin %}
+    Admin
+    {% endif %}
+
+    - {{ course_long_name }} ({{ canvas_course_id }})
+  </p>
+
   <div class="container mt-4">
 
     <div class="row">
@@ -21,154 +51,113 @@
 
     <div class="row mb-5">
       <div class="col-md-4">
-        <div class="card">
-          <div class="card-header p-2">
-            <h3 class="h5 m-0 text-center">Congfiguration</h3>
-          </div>
+
+        <h3 class="h5 text-center">Congfiguration</h3>
+        <div class="card mb-3">
           <ul class="list-group list-group-flush">
             <li class="list-group-item">
-              <a href="#" class="d-block">
-                <h4 class="h6">Add People</h4>
-                <p class="text-dark">Add students, teachers, and more to your course.</p>
-              </a>
+              <h4 class="h6"><a href="#" class="d-inline-block">Add People</a></h4>
+              <p class="m-0 text-dark">Add students, teachers, and more to your course.</p>
             </li>
             <li class="list-group-item">
-              <a href="#" class="d-block">
-                <h4 class="h6">Manage UW Groups</h4>
-                <p class="text-dark">Manage and add UW groups to your course.</p>
-              </a>
+              <h4 class="h6"><a href="#" class="d-inline-block">Manage UW Groups</a></h4>
+              <p class="m-0 text-dark">Manage and add UW groups to your course.</p>
             </li>
             <li class="list-group-item">
-              <a href="#" class="d-block">
-                <h4 class="h6">Apply Templates</h4>
-                <p class="text-dark">View and apply templates that will help create courses that are easy for students
-                  to navigate.</p>
-              </a>
+              <h4 class="h6"><a href="#" class="d-inline-block">Apply Templates</a></h4>
+              <p class="m-0 text-dark">View and apply templates that will help create courses that are easy for students
+                to navigate.</p>
             </li>
             <li class="list-group-item">
-              <a href="#" class="d-block">
-                <h4 class="h6">4.0 Grade Scale</h4>
-                <p class="text-dark">Create a grade scale for your Canvas assignments.</p>
-              </a>
+              <h4 class="h6"><a href="#" class="d-inline-block">4.0 Grade Scale</a></h4>
+              <p class="m-0 text-dark">Create a grade scale for your Canvas assignments.</p>
             </li>
           </ul>
         </div>
+
       </div>
       <div class="col-md-4">
-        <div class="card">
-          <div class="card-header p-2">
-            <h3 class="h5 m-0 text-center">Data</h3>
-          </div>
+
+        <h3 class="h5 text-center">Data</h3>
+        <div class="card mb-3">
           <ul class="list-group list-group-flush">
             <li class="list-group-item">
-              <a href="#" class="d-block">
-                <h4 class="h6">Photo Class List</h4>
-                <p class="text-dark">View photos of students from your Canvas course.</p>
-              </a>
+              <h4 class="h6"><a href="#" class="d-inline-block">Photo Class List</a></h4>
+              <p class="m-0 text-dark">View photos of students from your Canvas course.</p>
             </li>
             <li class="list-group-item">
-              <a href="#" class="d-block">
-                <h4 class="h6">Course Accessibility Report</h4>
-                <p class="text-dark">Check course content for accessibility issues.</p>
-              </a>
+              <h4 class="h6"><a href="#" class="d-inline-block">Course Accessibility Report</a></h4>
+              <p class="m-0 text-dark">Check course content for accessibility issues.</p>
             </li>
             <li class="list-group-item">
-              <a href="#" class="d-block">
-                <h4 class="h6">MyUW Classlist</h4>
-                <p class="text-dark">View students in your course.</p>
-              </a>
+              <h4 class="h6"><a href="#" class="d-inline-block">MyUW Classlist</a></h4>
+              <p class="m-0 text-dark">View students in your course.</p>
             </li>
             <li class="list-group-item">
-              <a href="#" class="d-block">
-                <h4 class="h6">MyUW Course Instructor Dashboard</h4>
-                <p class="text-dark">View aggregated data from courses you’re teaching.</p>
-              </a>
+              <h4 class="h6"><a href="#" class="d-inline-block">MyUW Course Instructor Dashboard</a></h4>
+              <p class="m-0 text-dark">View aggregated data from courses you’re teaching.</p>
             </li>
           </ul>
         </div>
+
       </div>
       <div class="col-md-4">
 
         <h3 class="h5 text-center">Tools</h3>
+        <div class="card mb-3">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <h4 class="h6">
+                <a href="#" class="d-inline-block">Zoom</a>
+                <a class="small text-muted" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">more resources</a>
+              </h4>
+              <p class="m-0 text-dark">Schedule and start online class sessions.</p>
+              <div class="collapse" id="collapseExample">
+                <ul>
+                  <li><a href="#" class="d-inline-block">Teaching Guide: Zoom App in Canvas</a></li>
+                  <li><a href="#" class="d-inline-block">Technology How-To Guide</a></li>
+                </ul>
+              </div>
+              
 
-        <div class="accordion" id="accordionExample">
-          <div class="card">
-            <div class="card-header" id="headingOne" data-toggle="collapse"
-                  data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                <a href="/">Zoom</a>
-                <p>Schedule and start online class sessions.</p>
-            </div>
-
-            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-              <div class="card-body">
-                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf
-                moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
-              </div>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-header" id="headingTwo">
-              <h2 class="mb-0">
-                <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse"
-                  data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                  Collapsible Group Item #2
-                </button>
-              </h2>
-            </div>
-            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-              <div class="card-body">
-                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf
-                moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
-              </div>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-header" id="headingThree">
-              <h2 class="mb-0">
-                <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse"
-                  data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                  Collapsible Group Item #3
-                </button>
-              </h2>
-            </div>
-            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-              <div class="card-body">
-                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf
-                moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
-              </div>
-            </div>
-          </div>
+            </li>
+            <li class="list-group-item">
+              <h4 class="h6"><a href="#" class="d-inline-block">Panopto Recording Scheduler</a></h4>
+              <p class="m-0 text-dark">Schedule lecture recordings for your course with Panopto.</p>
+            </li>
+            <li class="list-group-item">
+              <h4 class="h6"><a href="#" class="d-inline-block">Panopto Recordings</a></h4>
+              <p class="m-0 text-dark">View previous Panopto Recordings.</p>
+            </li>
+            <li class="list-group-item">
+              <h4 class="h6"><a href="#" class="d-inline-block">Poll Everywhere</a></h4>
+              <p class="m-0 text-dark">Create poll responses for your classes.</p>
+            </li>
+          </ul>
         </div>
 
-      </div>
+       </div>
     </div>
 
     <h2 class="h4 mb-4">Teaching Resources</h2>
 
     <div class="row mb-3">
       <div class="col">
-        <div class="card">
-          <div class="card-header p-2">
-            <h3 class="h5 m-0 text-center">Remote Teaching</h3>
-          </div>
+
+      <h3 class="h5 text-center">Tools</h3>
+        <div class="card mb-3">
           <ul class="list-group list-group-flush">
             <li class="list-group-item">
-              <a href="#" class="d-block">
-                <h4 class="h6">Teaching Remotely</h4>
-                <p class="text-dark">Learn best practices for effective remote instruction.</p>
-              </a>
+              <h4 class="h6"><a href="#" class="d-block">Teaching Remotely</a></h4>
+              <p class="m-0 text-dark">Learn best practices for effective remote instruction.</p>
             </li>
             <li class="list-group-item">
-              <a href="#" class="d-block">
-                <h4 class="h6">Teaching with UW Technologies</h4>
-                <p class="text-dark">Learn more about technology you can use to support online instruction.</p>
-              </a>
+              <h4 class="h6"><a href="#" class="d-block">Teaching with UW Technologies</a></h4>
+              <p class="m-0 text-dark">Learn more about technology you can use to support online instruction.</p>
             </li>
             <li class="list-group-item">
-              <a href="#" class="d-block">
-                <h4 class="h6">Workshops</h4>
-                <p class="text-dark">Participate in workshops on Canvas, Zoom, and Panopto</p>
-              </a>
+              <h4 class="h6"><a href="#" class="d-block">Workshops</a></h4>
+              <p class="m-0 text-dark">Participate in workshops on Canvas, Zoom, and Panopto</p>
             </li>
           </ul>
         </div>
@@ -176,39 +165,6 @@
     </div>
 
   </div>
-
-
-  <p class="text-dark">Campus:
-    {% if is_seattle %}
-    Seattle
-    {% elif is_tacoma %}
-    Tacoma
-    {% elif is_bothell %}
-    Bothell
-    {% endif %}
-  </p>
-
-  <p class="text-dark">
-    Looks like you're
-
-    {% if is_instructor %}
-    an instructor
-    {% endif %}
-
-    {% if is_ta %}
-    a Teaching Assistant
-    {% endif %}
-
-    {% if is_student %}
-    a Student
-    {% endif %}
-
-    {% if is_admin %}
-    an admin
-    {% endif %}
-    in
-    {{ course_long_name }} ({{ canvas_course_id }})
-  </p>
 
 </div>
 {% endblock %}
