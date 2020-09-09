@@ -61,19 +61,23 @@
               <h4 class="h6 m-0"><a href="#" class="d-inline-block ">Add People</a> <span class="badge badge-warning">APP</span></h4>
               <p class="m-0 font-weight-light">Add students, teachers, and more to your course.</p>
             </li>
+            {% if uw_groups_href %}
             <li class="list-group-item">
-              <h4 class="h6 m-0"><a href="#" class="d-inline-block ">Manage UW Groups</a> <span class="badge badge-warning">APP</span></h4>
+              <h4 class="h6 m-0"><a href="{{ uw_groups_href }}" class="d-inline-block" target="_top">Manage UW Groups</a> <span class="badge badge-warning">APP</span></h4>
               <p class="m-0 font-weight-light">Manage and add UW groups to your course.</p>
             </li>
+            {% endif %}
             <li class="list-group-item">
               <h4 class="h6 m-0"><a href="#" class="d-inline-block ">Apply Templates</a> <span class="badge badge-warning">APP</span></h4>
               <p class="m-0 font-weight-light">View and apply templates that will help create courses that are easy for students
                 to navigate.</p>
             </li>
+            {% if uw_grade_scale_href %}
             <li class="list-group-item">
-              <h4 class="h6 m-0"><a href="#" class="d-inline-block ">4.0 Grade Scale</a> <span class="badge badge-warning">APP</span></h4>
+              <h4 class="h6 m-0"><a href="{{ uw_grade_scale_href }}" class="d-inline-block" target="_top">4.0 Grade Scale</a> <span class="badge badge-warning">APP</span></h4>
               <p class="m-0 font-weight-light">Create a grade scale for your Canvas assignments.</p>
             </li>
+            {% endif %}
           </ul>
         </div>
 
@@ -83,22 +87,30 @@
         <h3 class="h5">Data</h3>
         <div class="card mb-3">
           <ul class="list-group list-group-flush">
+            {% if uw_classlist_href %}
             <li class="list-group-item">
-              <h4 class="h6 m-0"><a href="#" class="d-inline-block ">Photo Class List</a> <span class="badge badge-warning">APP</span></h4>
+              <h4 class="h6 m-0"><a href="{{ uw_classlist_href }}" class="d-inline-block" target="_top">Photo Class List</a> <span class="badge badge-warning">APP</span></h4>
               <p class="m-0 font-weight-light">View photos of students from your Canvas course.</p>
             </li>
+            {% endif %}
+            {% if uw_accessibility_href %}
             <li class="list-group-item">
-              <h4 class="h6 m-0"><a href="#" class="d-inline-block ">Course Accessibility Report</a> <span class="badge badge-warning">APP</span></h4>
+              <h4 class="h6 m-0"><a href="{{ uw_accessibility_href }}" class="d-inline-block" target="_top">Course Accessibility Report</a> <span class="badge badge-warning">APP</span></h4>
               <p class="m-0 font-weight-light">Check course content for accessibility issues.</p>
             </li>
+            {% endif %}
+            {% if myuw_classlist_href %}
             <li class="list-group-item">
-              <h4 class="h6 m-0"><a href="#" class="d-inline-block ">MyUW Classlist</a></h4>
+              <h4 class="h6 m-0"><a href="{{ myuw_classlist_href }}" class="d-inline-block" target="_blank">MyUW Classlist</a></h4>
               <p class="m-0 font-weight-light">View students in your course.</p>
             </li>
+            {% endif %}
+            {% if uw_coda_href %}
             <li class="list-group-item">
-              <h4 class="h6 m-0"><a href="#" class="d-inline-block ">MyUW Course Instructor Dashboard</a> <span class="badge badge-warning">APP</span></h4>
+              <h4 class="h6 m-0"><a href="{{ uw_coda_href }}" class="d-inline-block target=_blank">MyUW Course Instructor Dashboard</a> <span class="badge badge-warning">APP</span></h4>
               <p class="m-0 font-weight-light">View aggregated data from courses you’re teaching.</p>
             </li>
+            {% endif %}
           </ul>
         </div>
 
