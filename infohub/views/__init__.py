@@ -58,8 +58,9 @@ class InfoHubView(BLTIView):
             context['is_admin'] = False
             pass
 
-        default_href_spec = ('/courses/{canvas_course_id}' +
-                             '/external_tools/{ext_id}')
+        default_href_spec = ('https://{}/courses/{{canvas_course_id}}' +
+                             '/external_tools/{{ext_id}}').format(
+                                 self.blti.canvas_api_domain)
         external_tools = getattr(settings, "CANVAS_EXTERNAL_TOOLS", {})
         for tool in external_tools:
             conf = external_tools[tool]
