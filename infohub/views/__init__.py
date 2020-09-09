@@ -18,6 +18,7 @@ class InfoHubView(BLTIView):
         account_sis_id = self.blti.account_sis_id
         context['user_login_id'] = self.blti.user_login_id
         context['user_first_name'] = self.blti.user_first_name
+        context['user_last_name'] = self.blti.user_last_name
         context['user_full_name'] = self.blti.user_full_name
         context['account_sis_id'] = account_sis_id
         context['canvas_account_id'] = self.blti.canvas_account_id

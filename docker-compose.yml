@@ -15,5 +15,5 @@ services:
     volumes:
       - ./infohub:/app/infohub
     ports:
-      - "8080:8000"
+      - "8000:8000"
 

@@ -37,9 +37,13 @@ DETECT_USER_AGENTS = {
     'is_desktop': True,
 }
 
-LTI_ENFORCE_SSL=False
-
-DEBUG = True if os.getenv('ENV', 'localdev') == "localdev" else False
-
-if DEBUG:
+if os.getenv('ENV', 'localdev') == "localdev":
+    DEBUG = True
     LTI_DEVELOP_APP = os.getenv("LTI_DEVELOP_APP", '')
+    if 'blti.middleware.SameSiteMiddleware' in MIDDLEWARE:
+        MIDDLEWARE.remove('blti.middleware.SameSiteMiddleware')
+
+    SESSION_COOKIE_SECURE = False
+    CSRF_COOKIE_SECURE = False
+else:
+    DEBUG = False
