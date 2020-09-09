@@ -43,8 +43,14 @@
 
         <div class="p-3 mb-5 rounded" style="background: #f4f2ea;">
           <div class="h3 text-center">Welcome, {{ user_first_name }}!</div>
+          {% if is_instructor or is_ta %}
           <p class="lead text-center">Explore different resources that will help you design your course and teach
             remotely!</p>
+          {% endif %}
+          {% if is_student %}
+          <p class="lead text-center">Explore different resources that will help you be more effective in learning remotely!</p>
+          {% endif %}
+
         </div>
       </div>
     </div>
