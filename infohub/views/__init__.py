@@ -1,7 +1,9 @@
+from django.conf import settings
 from django.shortcuts import redirect
 from blti import BLTIException
 from blti.views import BLTILaunchView, BLTIView
 from blti.validators import Roles
+import re
 
 
 class InfoHubLaunchView(BLTILaunchView):
@@ -56,4 +58,41 @@ class InfoHubView(BLTIView):
             context['is_admin'] = False
             pass
 
+        default_href_spec = ('/courses/{canvas_course_id}' +
+                             '/external_tools/{ext_id}')
+        external_tools = getattr(settings, "CANVAS_EXTERNAL_TOOLS", {})
+        for tool in external_tools:
+            conf = external_tools[tool]
+            ext_id = conf.get('ext_id', None)
+
+            if ('subaccounts' in conf and
+                    not self._valid_subaccount(
+                        account_sis_id, conf['subaccounts'])):
+                continue
+
+            context['{}_ext_id'.format(tool)] = ext_id
+            context['{}_href'.format(tool)] = conf.get(
+                'href_spec', default_href_spec).format(
+                    ext_id=ext_id,
+                    canvas_course_id=self.blti.canvas_course_id,
+                    course_sis_id=self.blti.course_sis_id,
+                    course_sws_id=self._sis_to_sws(self.blti.course_sis_id))
+
         return context
+
+    def _valid_subaccount(self, account_sis_id, subaccount_sis_ids):
+        for subaccount in subaccount_sis_ids:
+            if subaccount[-1:] == ':':
+                if subaccount == account_sis_id[:len(subaccount)]:
+                    return True
+            elif subaccount == account_sis_id:
+                return True
+
+        return False
+
+    def _sis_to_sws(self, course_sis_id):
+        m = re.match(('^([0-9]{4})-(autumn|winter|spring|summer)-' +
+                      '([^-]+)-([0-9]+)-([A-Z]+)$'), course_sis_id)
+        return "{year},{quarter},{curric},{course}/{section}".format(
+            year=m.group(1), quarter=m.group(2), curric=m.group(3),
+            course=m.group(4), section=m.group(5)) if m else ""
