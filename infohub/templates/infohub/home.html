@@ -50,7 +50,9 @@
           {% if is_student %}
           <p class="lead text-center">Explore different resources that will help you be more effective in learning remotely!</p>
           {% endif %}
-
+          {% if is_admin %}
+          <p class="lead text-center">Here to help you be the best remote adminstrator ever!</p>
+          {% endif %}
         </div>
       </div>
     </div>
@@ -169,7 +171,7 @@
        </div>
     </div>
 
-    {% if is_instructor or is_ta %}
+    {% if is_instructor or is_ta or is_admin %}
     <h2 class="h4 mb-4">Teaching Resources</h2>
 
     <div class="row mb-3">
@@ -240,7 +242,7 @@
     </div>
     {% endif %}
 
-    {% if is_student %}
+    {% if is_student or is_admin %}
     <h2 class="h4 mb-4">Student Resources</h2>
 
     <div class="row mb-3">
