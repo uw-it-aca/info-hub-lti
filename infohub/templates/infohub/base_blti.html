@@ -27,11 +27,10 @@
 </head>
 <body>
 
-    <div id="wrapper" class="container" style="position:relative;">
-
+    <div id="wrapper" style="position:relative;">
         <div id="main-wrapper">
             <div role="main" id="main" aria-labelledby="uw_infohub_header">
-               <div class="inner">{% block content %}{% endblock %}</div>
+               {% block content %}{% endblock %}
             </div><!--end #main-->
         </div>
     </div>
