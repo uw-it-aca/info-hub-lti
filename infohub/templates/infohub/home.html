@@ -58,20 +58,20 @@
         <div class="card mb-3">
           <ul class="list-group list-group-flush">
             <li class="list-group-item">
-              <h4 class="h6 m-0"><a href="#" class="d-inline-block ">Add People</a></h4>
+              <h4 class="h6 m-0"><a href="#" class="d-inline-block ">Add People</a> <span class="badge badge-warning">APP</span></h4>
               <p class="m-0 font-weight-light">Add students, teachers, and more to your course.</p>
             </li>
             <li class="list-group-item">
-              <h4 class="h6 m-0"><a href="#" class="d-inline-block ">Manage UW Groups</a></h4>
+              <h4 class="h6 m-0"><a href="#" class="d-inline-block ">Manage UW Groups</a> <span class="badge badge-warning">APP</span></h4>
               <p class="m-0 font-weight-light">Manage and add UW groups to your course.</p>
             </li>
             <li class="list-group-item">
-              <h4 class="h6 m-0"><a href="#" class="d-inline-block ">Apply Templates</a></h4>
+              <h4 class="h6 m-0"><a href="#" class="d-inline-block ">Apply Templates</a> <span class="badge badge-warning">APP</span></h4>
               <p class="m-0 font-weight-light">View and apply templates that will help create courses that are easy for students
                 to navigate.</p>
             </li>
             <li class="list-group-item">
-              <h4 class="h6 m-0"><a href="#" class="d-inline-block ">4.0 Grade Scale</a></h4>
+              <h4 class="h6 m-0"><a href="#" class="d-inline-block ">4.0 Grade Scale</a> <span class="badge badge-warning">APP</span></h4>
               <p class="m-0 font-weight-light">Create a grade scale for your Canvas assignments.</p>
             </li>
           </ul>
@@ -84,11 +84,11 @@
         <div class="card mb-3">
           <ul class="list-group list-group-flush">
             <li class="list-group-item">
-              <h4 class="h6 m-0"><a href="#" class="d-inline-block ">Photo Class List</a></h4>
+              <h4 class="h6 m-0"><a href="#" class="d-inline-block ">Photo Class List</a> <span class="badge badge-warning">APP</span></h4>
               <p class="m-0 font-weight-light">View photos of students from your Canvas course.</p>
             </li>
             <li class="list-group-item">
-              <h4 class="h6 m-0"><a href="#" class="d-inline-block ">Course Accessibility Report</a></h4>
+              <h4 class="h6 m-0"><a href="#" class="d-inline-block ">Course Accessibility Report</a> <span class="badge badge-warning">APP</span></h4>
               <p class="m-0 font-weight-light">Check course content for accessibility issues.</p>
             </li>
             <li class="list-group-item">
@@ -96,7 +96,7 @@
               <p class="m-0 font-weight-light">View students in your course.</p>
             </li>
             <li class="list-group-item">
-              <h4 class="h6 m-0"><a href="#" class="d-inline-block ">MyUW Course Instructor Dashboard</a></h4>
+              <h4 class="h6 m-0"><a href="#" class="d-inline-block ">MyUW Course Instructor Dashboard</a> <span class="badge badge-warning">APP</span></h4>
               <p class="m-0 font-weight-light">View aggregated data from courses you’re teaching.</p>
             </li>
           </ul>
@@ -163,6 +163,7 @@
        </div>
     </div>
 
+    {% if is_instructor or is_ta %}
     <h2 class="h4 mb-4">Teaching Resources</h2>
 
     <div class="row mb-3">
@@ -231,6 +232,18 @@
 
       </div>
     </div>
+    {% endif %}
+
+    {% if is_student %}
+    <h2 class="h4 mb-4">Student Resources</h2>
+
+    <div class="row mb-3">
+      <div class="col">
+      student resources go here
+      </div>
+    </div>  
+
+    {% endif %}
 
   </div>
 
