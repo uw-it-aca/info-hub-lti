@@ -71,19 +71,23 @@
               <h4 class="h6 m-0"><a href="#" class="d-inline-block ">Add People</a> <span class="badge badge-warning">APP</span></h4>
               <p class="m-0 font-weight-light">Add students, teachers, and more to your course.</p>
             </li>
+            {% if uw_groups_href %}
             <li class="list-group-item">
-              <h4 class="h6 m-0"><a href="#" class="d-inline-block ">Manage UW Groups</a> <span class="badge badge-warning">APP</span></h4>
+              <h4 class="h6 m-0"><a href="{{ uw_groups_href }}" class="d-inline-block" target="_top">Manage UW Groups</a> <span class="badge badge-warning">APP</span></h4>
               <p class="m-0 font-weight-light">Manage and add UW groups to your course.</p>
             </li>
+            {% endif %}
             <li class="list-group-item">
               <h4 class="h6 m-0"><a href="#" class="d-inline-block ">Apply Templates</a> <span class="badge badge-warning">APP</span></h4>
               <p class="m-0 font-weight-light">View and apply templates that will help create courses that are easy for students
                 to navigate.</p>
             </li>
+            {% if uw_grade_scale_href %}
             <li class="list-group-item">
-              <h4 class="h6 m-0"><a href="#" class="d-inline-block ">4.0 Grade Scale</a> <span class="badge badge-warning">APP</span></h4>
+              <h4 class="h6 m-0"><a href="{{ uw_grade_scale_href }}" class="d-inline-block" target="_top">4.0 Grade Scale</a> <span class="badge badge-warning">APP</span></h4>
               <p class="m-0 font-weight-light">Create a grade scale for your Canvas assignments.</p>
             </li>
+            {% endif %}
           </ul>
         </div>
 
@@ -93,22 +97,30 @@
         <h3 class="h5">Data</h3>
         <div class="card mb-3">
           <ul class="list-group list-group-flush">
+            {% if uw_classlist_href %}
             <li class="list-group-item">
-              <h4 class="h6 m-0"><a href="#" class="d-inline-block ">Photo Class List</a> <span class="badge badge-warning">APP</span></h4>
+              <h4 class="h6 m-0"><a href="{{ uw_classlist_href }}" class="d-inline-block" target="_top">Photo Class List</a> <span class="badge badge-warning">APP</span></h4>
               <p class="m-0 font-weight-light">View photos of students from your Canvas course.</p>
             </li>
+            {% endif %}
+            {% if uw_accessibility_href %}
             <li class="list-group-item">
-              <h4 class="h6 m-0"><a href="#" class="d-inline-block ">Course Accessibility Report</a> <span class="badge badge-warning">APP</span></h4>
+              <h4 class="h6 m-0"><a href="{{ uw_accessibility_href }}" class="d-inline-block" target="_top">Course Accessibility Report</a> <span class="badge badge-warning">APP</span></h4>
               <p class="m-0 font-weight-light">Check course content for accessibility issues.</p>
             </li>
+            {% endif %}
+            {% if myuw_classlist_href %}
             <li class="list-group-item">
-              <h4 class="h6 m-0"><a href="#" class="d-inline-block ">MyUW Classlist</a></h4>
+              <h4 class="h6 m-0"><a href="{{ myuw_classlist_href }}" class="d-inline-block" target="_blank">MyUW Classlist</a></h4>
               <p class="m-0 font-weight-light">View students in your course.</p>
             </li>
+            {% endif %}
+            {% if uw_coda_href %}
             <li class="list-group-item">
-              <h4 class="h6 m-0"><a href="#" class="d-inline-block ">MyUW Course Instructor Dashboard</a></h4>
+              <h4 class="h6 m-0"><a href="{{ uw_coda_href }}" class="d-inline-block" target="_blank">MyUW Course Instructor Dashboard</a> <span class="badge badge-warning">APP</span></h4>
               <p class="m-0 font-weight-light">View aggregated data from courses you’re teaching.</p>
             </li>
+            {% endif %}
           </ul>
         </div>
 
@@ -118,9 +130,10 @@
         <h3 class="h5">Tools</h3>
         <div class="card mb-3">
           <ul class="list-group list-group-flush">
+            {% if uw_zoom_href %}
             <li class="list-group-item">
               <h4 class="h6 m-0">
-                <a href="#" class="d-inline-block ">Zoom</a>
+                <a href="{{ uw_zoom_href }}" class="d-inline-block " target="_top">Zoom</a>
                 <a class="small text-muted" data-toggle="collapse" href="#collapseZoom" role="button" aria-expanded="false" aria-controls="collapseExample">more resources</a>
               </h4>
               <p class="m-0 font-weight-light">Schedule and start online class sessions.</p>
@@ -131,21 +144,11 @@
                 </ul>
               </div>
             </li>
-            <!--<li class="list-group-item">
-              <h4 class="h6 m-0">
-                <a href="#" class="d-inline-block ">Panopto Recording Scheduler</a>
-                <a class="small text-muted" data-toggle="collapse" href="#collapsePanaptoScheduler" role="button" aria-expanded="true" aria-controls="collapseExample">more resources</a>
-              </h4>
-              <p class="m-0 font-weight-light">Schedule lecture recordings for your course with Panopto.</p>
-               <div class="collapse show" id="collapsePanaptoScheduler">
-                <ul class="mt-3 list-unstyled small">
-                  <li><a href="https://itconnect.uw.edu/learn/tools/panopto/schedule-recordings/auto-sched/" target="_blank" class="d-inline-block">Schedule Lecture Capture (Automatically, via Canvas)</a></li>
-                </ul>
-              </div>
-            </li>-->
+            {% endif %}
+            {% if uw_panopto_href %}
             <li class="list-group-item">
               <h4 class="h6 m-0">
-                <a href="#" class="d-inline-block ">Panopto Recordings</a>
+                <a href="{{ uw_panopto_href }}" class="d-inline-block " target="_top">Panopto Recordings</a>
                 <a class="small text-muted" data-toggle="collapse" href="#collapsePanaptoRecordings" role="button" aria-expanded="false" aria-controls="collapseExample">more resources</a>
               </h4>
               <p class="m-0 font-weight-light">View previous Panopto Recordings.</p>
@@ -155,9 +158,25 @@
                 </ul>
               </div>
             </li>
+            {% endif %}
+            {% if uw_panopto_scheduler_href %}
             <li class="list-group-item">
               <h4 class="h6 m-0">
-                <a href="#" class="d-inline-block ">Poll Everywhere</a>
+                <a href="{{ uw_panopto_scheduler_href }}" class="d-inline-block " target="_top">Panopto Recording Scheduler</a>
+                <a class="small text-muted" data-toggle="collapse" href="#collapsePanaptoScheduler" role="button" aria-expanded="false" aria-controls="collapseExample">more resources</a>
+              </h4>
+              <p class="m-0 font-weight-light">Schedule lecture recordings for your course with Panopto.</p>
+               <div class="collapse" id="collapsePanaptoScheduler">
+                <ul class="mt-3 list-unstyled small">
+                  <li><a href="https://itconnect.uw.edu/learn/tools/panopto/schedule-recordings/auto-sched/" target="_blank" class="d-inline-block">Schedule Lecture Capture (Automatically, via Canvas)</a></li>
+                </ul>
+              </div>
+            </li>
+            {% endif %}
+            {% if uw_poll_everywhere_href %}
+            <li class="list-group-item">
+              <h4 class="h6 m-0">
+                <a href="{{ uw_poll_everywhere_href }}" class="d-inline-block " target="_top">Poll Everywhere</a>
                   <a class="small text-muted" data-toggle="collapse" href="#collapsePollEverywhere" role="button" aria-expanded="false" aria-controls="collapseExample">more resources</a>
               </h4>
               <p class="m-0 font-weight-light">Create poll responses for your classes.</p>
@@ -167,6 +186,7 @@
                 </ul>
               </div>
             </li>
+            {% endif %}
           </ul>
         </div>
 
