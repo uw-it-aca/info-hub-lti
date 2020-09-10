@@ -57,12 +57,14 @@
       </div>
     </div>
 
+    {% if is_instructor or is_ta or is_admin %}
+
     <h2 class="h4 mb-4">Class Resources</h2>
 
     <div class="row mb-5">
       <div class="col-md-4">
 
-        <h3 class="h5">Congfiguration</h3>
+        <h3 class="h5">Configuration</h3>
         <div class="card mb-3">
           <ul class="list-group list-group-flush">
             <li class="list-group-item">
@@ -104,7 +106,7 @@
               <p class="m-0 font-weight-light">View students in your course.</p>
             </li>
             <li class="list-group-item">
-              <h4 class="h6 m-0"><a href="#" class="d-inline-block ">MyUW Course Instructor Dashboard</a> <span class="badge badge-warning">APP</span></h4>
+              <h4 class="h6 m-0"><a href="#" class="d-inline-block ">MyUW Course Instructor Dashboard</a></h4>
               <p class="m-0 font-weight-light">View aggregated data from courses you’re teaching.</p>
             </li>
           </ul>
@@ -119,10 +121,10 @@
             <li class="list-group-item">
               <h4 class="h6 m-0">
                 <a href="#" class="d-inline-block ">Zoom</a>
-                <a class="small text-muted" data-toggle="collapse" href="#collapseZoom" role="button" aria-expanded="true" aria-controls="collapseExample">more resources</a>
+                <a class="small text-muted" data-toggle="collapse" href="#collapseZoom" role="button" aria-expanded="false" aria-controls="collapseExample">more resources</a>
               </h4>
               <p class="m-0 font-weight-light">Schedule and start online class sessions.</p>
-              <div class="collapse show" id="collapseZoom">
+              <div class="collapse" id="collapseZoom">
                 <ul class="mt-3 list-unstyled small">
                   <li><a href="https://itconnect.uw.edu/connect/phones/conferencing/zoom-video-conferencing/zoom-canvas/" target="_blank" class="d-inline-block">Teaching Guide: Zoom App in Canvas</a></li>
                   <li><a href="https://teaching.washington.edu/topics/teaching-remotely/technology-how-to-guides/" target="_blank" class="d-inline-block">Technology How-To Guide</a></li>
@@ -144,10 +146,10 @@
             <li class="list-group-item">
               <h4 class="h6 m-0">
                 <a href="#" class="d-inline-block ">Panopto Recordings</a>
-                <a class="small text-muted" data-toggle="collapse" href="#collapsePanaptoRecordings" role="button" aria-expanded="true" aria-controls="collapseExample">more resources</a>
+                <a class="small text-muted" data-toggle="collapse" href="#collapsePanaptoRecordings" role="button" aria-expanded="false" aria-controls="collapseExample">more resources</a>
               </h4>
               <p class="m-0 font-weight-light">View previous Panopto Recordings.</p>
-              <div class="collapse show" id="collapsePanaptoRecordings">
+              <div class="collapse" id="collapsePanaptoRecordings">
                 <ul class="mt-3 list-unstyled small">
                   <li><a href="https://itconnect.uw.edu/learn/tools/panopto/share-recordings/" target="_blank" class="d-inline-block">Share Recordings in Canvas</a></li>
                 </ul>
@@ -156,10 +158,10 @@
             <li class="list-group-item">
               <h4 class="h6 m-0">
                 <a href="#" class="d-inline-block ">Poll Everywhere</a>
-                  <a class="small text-muted" data-toggle="collapse" href="#collapsePollEverywhere" role="button" aria-expanded="true" aria-controls="collapseExample">more resources</a>
+                  <a class="small text-muted" data-toggle="collapse" href="#collapsePollEverywhere" role="button" aria-expanded="false" aria-controls="collapseExample">more resources</a>
               </h4>
               <p class="m-0 font-weight-light">Create poll responses for your classes.</p>
-               <div class="collapse show" id="collapsePollEverywhere">
+               <div class="collapse" id="collapsePollEverywhere">
                 <ul class="mt-3 list-unstyled small">
                   <li><a href="https://itconnect.uw.edu/learn/tools/polleverywhere/" target="_blank" class="d-inline-block">IT Connect Help</a></li>
                 </ul>
@@ -171,7 +173,7 @@
        </div>
     </div>
 
-    {% if is_instructor or is_ta or is_admin %}
+
     <h2 class="h4 mb-4">Teaching Resources</h2>
 
     <div class="row mb-3">
@@ -245,11 +247,14 @@
     {% if is_student or is_admin %}
     <h2 class="h4 mb-4">Student Resources</h2>
 
-    <div class="row mb-3">
+    <div class="row">
       <div class="col">
-      student resources go here
+        One of three columns
       </div>
-    </div>  
+      <div class="col">
+        One of three columns
+      </div>
+    </div>
 
     {% endif %}
 
