@@ -120,9 +120,10 @@
         <h3 class="h5">Tools</h3>
         <div class="card mb-3">
           <ul class="list-group list-group-flush">
+            {% if uw_zoom_href %}
             <li class="list-group-item">
               <h4 class="h6 m-0">
-                <a href="#" class="d-inline-block ">Zoom</a>
+                <a href="{{ uw_zoom_href }}" class="d-inline-block " target="_top">Zoom</a>
                 <a class="small text-muted" data-toggle="collapse" href="#collapseZoom" role="button" aria-expanded="true" aria-controls="collapseExample">more resources</a>
               </h4>
               <p class="m-0 font-weight-light">Schedule and start online class sessions.</p>
@@ -133,21 +134,11 @@
                 </ul>
               </div>
             </li>
-            <!--<li class="list-group-item">
-              <h4 class="h6 m-0">
-                <a href="#" class="d-inline-block ">Panopto Recording Scheduler</a>
-                <a class="small text-muted" data-toggle="collapse" href="#collapsePanaptoScheduler" role="button" aria-expanded="true" aria-controls="collapseExample">more resources</a>
-              </h4>
-              <p class="m-0 font-weight-light">Schedule lecture recordings for your course with Panopto.</p>
-               <div class="collapse show" id="collapsePanaptoScheduler">
-                <ul class="mt-3 list-unstyled small">
-                  <li><a href="https://itconnect.uw.edu/learn/tools/panopto/schedule-recordings/auto-sched/" target="_blank" class="d-inline-block">Schedule Lecture Capture (Automatically, via Canvas)</a></li>
-                </ul>
-              </div>
-            </li>-->
+            {% endif %}
+            {% if uw_panopto_href %}
             <li class="list-group-item">
               <h4 class="h6 m-0">
-                <a href="#" class="d-inline-block ">Panopto Recordings</a>
+                <a href="{{ uw_panopto_href }}" class="d-inline-block " target="_top">Panopto Recordings</a>
                 <a class="small text-muted" data-toggle="collapse" href="#collapsePanaptoRecordings" role="button" aria-expanded="true" aria-controls="collapseExample">more resources</a>
               </h4>
               <p class="m-0 font-weight-light">View previous Panopto Recordings.</p>
@@ -157,9 +148,25 @@
                 </ul>
               </div>
             </li>
+            {% endif %}
+            {% if uw_panopto_scheduler_href %}
             <li class="list-group-item">
               <h4 class="h6 m-0">
-                <a href="#" class="d-inline-block ">Poll Everywhere</a>
+                <a href="{{ uw_panopto_scheduler_href }}" class="d-inline-block " target="_top">Panopto Recording Scheduler</a>
+                <a class="small text-muted" data-toggle="collapse" href="#collapsePanaptoScheduler" role="button" aria-expanded="true" aria-controls="collapseExample">more resources</a>
+              </h4>
+              <p class="m-0 font-weight-light">Schedule lecture recordings for your course with Panopto.</p>
+               <div class="collapse show" id="collapsePanaptoScheduler">
+                <ul class="mt-3 list-unstyled small">
+                  <li><a href="https://itconnect.uw.edu/learn/tools/panopto/schedule-recordings/auto-sched/" target="_blank" class="d-inline-block">Schedule Lecture Capture (Automatically, via Canvas)</a></li>
+                </ul>
+              </div>
+            </li>
+            {% endif %}
+            {% if uw_poll_everywhere_href %}
+            <li class="list-group-item">
+              <h4 class="h6 m-0">
+                <a href="{{ uw_poll_everywhere_href }}" class="d-inline-block " target="_top">Poll Everywhere</a>
                   <a class="small text-muted" data-toggle="collapse" href="#collapsePollEverywhere" role="button" aria-expanded="true" aria-controls="collapseExample">more resources</a>
               </h4>
               <p class="m-0 font-weight-light">Create poll responses for your classes.</p>
@@ -169,6 +176,7 @@
                 </ul>
               </div>
             </li>
+            {% endif %}
           </ul>
         </div>
 

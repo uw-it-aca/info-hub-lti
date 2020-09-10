@@ -58,22 +58,37 @@ class InfoHubView(BLTIView):
             context['is_admin'] = False
             pass
 
-        default_href_spec = ('https://{}/courses/{{canvas_course_id}}' +
+        default_href_spec = ('https://{canvas_api_domain}' +
+                             '/courses/{canvas_course_id}' +
                              '/external_tools/{{ext_id}}').format(
-                                 self.blti.canvas_api_domain)
+                                 canvas_api_domain=self.blti.canvas_api_domain,
+                                 canvas_course_id=self.blti.canvas_course_id)
         external_tools = getattr(settings, "CANVAS_EXTERNAL_TOOLS", {})
         for tool in external_tools:
-            conf = external_tools[tool]
-            ext_id = conf.get('ext_id', None)
+            confs = external_tools[tool]
+            ext_context = None
+            for c in confs:
+                ext_context = self._external_tool_context(
+                    tool, c, default_href_spec)
+                if ext_context:
+                    break
 
-            if ('subaccounts' in conf and
-                    not self._valid_subaccount(
-                        account_sis_id, conf['subaccounts'])):
-                continue
+            if ext_context:
+                context.update(ext_context)
 
-            context['{}_ext_id'.format(tool)] = ext_id
-            context['{}_href'.format(tool)] = conf.get(
-                'href_spec', default_href_spec).format(
+        return context
+
+    def _external_tool_context(self, tool, conf, default_spec):
+        if ('subaccounts' in conf and
+                not self._valid_subaccount(
+                    self.blti.account_sis_id, conf['subaccounts'])):
+            return None
+
+        context = {}
+        ext_id = conf.get('ext_id', None)
+        context['{}_ext_id'.format(tool)] = ext_id
+        context['{}_href'.format(tool)] = conf.get(
+                'href_spec', default_spec).format(
                     ext_id=ext_id,
                     canvas_course_id=self.blti.canvas_course_id,
                     course_sis_id=self.blti.course_sis_id,
