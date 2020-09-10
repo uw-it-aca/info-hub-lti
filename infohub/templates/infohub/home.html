@@ -41,7 +41,7 @@
       <div class="col">
         <h1 class="h2 mb-5" id="uw_infohub_header">UW Resources &amp; Tools</h1>
 
-        <div class="p-3 mb-5 rounded" style="background: #f4f2ea;">
+        <div class="p-3 mx-3 mb-5 rounded" style="background: #f4f2ea;">
           <div class="h3 text-center">Welcome, {{ user_first_name }}!</div>
           {% if is_instructor or is_ta %}
           <p class="lead text-center">Explore different resources that will help you design your course and teach
@@ -133,8 +133,8 @@
             {% if uw_zoom_href %}
             <li class="list-group-item">
               <h4 class="h6 m-0">
-                <a href="{{ uw_zoom_href }}" class="d-inline-block " target="_top">Zoom</a> <span class="badge badge-warning">APP</span>
-                <a class="small text-muted" data-toggle="collapse" href="#collapseZoom" role="button" aria-expanded="false" aria-controls="collapseExample">more resources</a>
+                <a href="{{ uw_zoom_href }}" class="d-inline-block" target="_top">Zoom</a> <span class="badge badge-warning">APP</span>
+                <a class="small text-muted lti-more" data-toggle="collapse" href="#collapseZoom" role="button" aria-expanded="false" aria-controls="collapseExample">show more</a>
               </h4>
               <p class="m-0 font-weight-light">Schedule and start online class sessions.</p>
               <div class="collapse" id="collapseZoom">
@@ -149,7 +149,7 @@
             <li class="list-group-item">
               <h4 class="h6 m-0">
                 <a href="{{ uw_panopto_href }}" class="d-inline-block " target="_top">Panopto Recordings</a> <span class="badge badge-warning">APP</span>
-                <a class="small text-muted" data-toggle="collapse" href="#collapsePanaptoRecordings" role="button" aria-expanded="false" aria-controls="collapseExample">more resources</a>
+                <a class="small text-muted lti-more" data-toggle="collapse" href="#collapsePanaptoRecordings" role="button" aria-expanded="false" aria-controls="collapseExample">show more</a>
               </h4>
               <p class="m-0 font-weight-light">View previous Panopto Recordings.</p>
               <div class="collapse" id="collapsePanaptoRecordings">
@@ -163,7 +163,7 @@
             <li class="list-group-item">
               <h4 class="h6 m-0">
                 <a href="{{ uw_panopto_scheduler_href }}" class="d-inline-block " target="_top">Panopto Recording Scheduler</a> <span class="badge badge-warning">APP</span>
-                <a class="small text-muted" data-toggle="collapse" href="#collapsePanaptoScheduler" role="button" aria-expanded="false" aria-controls="collapseExample">more resources</a>
+                <a class="small text-muted lti-more" data-toggle="collapse" href="#collapsePanaptoScheduler" role="button" aria-expanded="false" aria-controls="collapseExample">show more</a>
               </h4>
               <p class="m-0 font-weight-light">Schedule lecture recordings for your course with Panopto.</p>
                <div class="collapse" id="collapsePanaptoScheduler">
@@ -177,7 +177,7 @@
             <li class="list-group-item">
               <h4 class="h6 m-0">
                 <a href="{{ uw_poll_everywhere_href }}" class="d-inline-block " target="_top">Poll Everywhere</a> <span class="badge badge-warning">APP</span>
-                  <a class="small text-muted" data-toggle="collapse" href="#collapsePollEverywhere" role="button" aria-expanded="false" aria-controls="collapseExample">more resources</a>
+                  <a class="small text-muted lti-more" data-toggle="collapse" href="#collapsePollEverywhere" role="button" aria-expanded="false" aria-controls="collapseExample">show more</a>
               </h4>
               <p class="m-0 font-weight-light">Create poll responses for your classes.</p>
                <div class="collapse" id="collapsePollEverywhere">
