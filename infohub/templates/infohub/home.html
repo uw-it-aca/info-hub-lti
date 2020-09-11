@@ -48,7 +48,8 @@
             remotely!</p>
           {% endif %}
           {% if is_student %}
-          <p class="lead text-center">Explore different resources that will help you be more effective in learning remotely!</p>
+          <p class="lead text-center">Explore different resources that will help you be more effective in learning
+            remotely!</p>
           {% endif %}
           {% if is_admin %}
           <p class="lead text-center">Here to help you be the best remote adminstrator ever!</p>
@@ -68,23 +69,28 @@
         <div class="card mb-3">
           <ul class="list-group list-group-flush">
             <li class="list-group-item">
-              <h4 class="h6 m-0"><a href="#" class="d-inline-block ">Add People</a> <span class="badge badge-warning">APP</span></h4>
+              <h4 class="h6 m-0"><a href="#" class="d-inline-block ">Add People</a> <span
+                  class="badge badge-warning">APP</span></h4>
               <p class="m-0 font-weight-light">Add students, teachers, and more to your course.</p>
             </li>
             {% if uw_groups_href %}
             <li class="list-group-item">
-              <h4 class="h6 m-0"><a href="{{ uw_groups_href }}" class="d-inline-block" target="_top">Manage UW Groups</a> <span class="badge badge-warning">APP</span></h4>
+              <h4 class="h6 m-0"><a href="{{ uw_groups_href }}" class="d-inline-block" target="_top">Manage UW
+                  Groups</a> <span class="badge badge-warning">APP</span></h4>
               <p class="m-0 font-weight-light">Manage and add UW groups to your course.</p>
             </li>
             {% endif %}
             <li class="list-group-item">
-              <h4 class="h6 m-0"><a href="#" class="d-inline-block ">Apply Templates</a> <span class="badge badge-warning">APP</span></h4>
-              <p class="m-0 font-weight-light">View and apply templates that will help create courses that are easy for students
+              <h4 class="h6 m-0"><a href="#" class="d-inline-block ">Apply Templates</a> <span
+                  class="badge badge-warning">APP</span></h4>
+              <p class="m-0 font-weight-light">View and apply templates that will help create courses that are easy for
+                students
                 to navigate.</p>
             </li>
             {% if uw_grade_scale_href %}
             <li class="list-group-item">
-              <h4 class="h6 m-0"><a href="{{ uw_grade_scale_href }}" class="d-inline-block" target="_top">4.0 Grade Scale</a> <span class="badge badge-warning">APP</span></h4>
+              <h4 class="h6 m-0"><a href="{{ uw_grade_scale_href }}" class="d-inline-block" target="_top">4.0 Grade
+                  Scale</a> <span class="badge badge-warning">APP</span></h4>
               <p class="m-0 font-weight-light">Create a grade scale for your Canvas assignments.</p>
             </li>
             {% endif %}
@@ -99,25 +105,29 @@
           <ul class="list-group list-group-flush">
             {% if uw_classlist_href %}
             <li class="list-group-item">
-              <h4 class="h6 m-0"><a href="{{ uw_classlist_href }}" class="d-inline-block" target="_top">Photo Class List</a> <span class="badge badge-warning">APP</span></h4>
+              <h4 class="h6 m-0"><a href="{{ uw_classlist_href }}" class="d-inline-block" target="_top">Photo Class
+                  List</a> <span class="badge badge-warning">APP</span></h4>
               <p class="m-0 font-weight-light">View photos of students from your Canvas course.</p>
             </li>
             {% endif %}
             {% if uw_accessibility_href %}
             <li class="list-group-item">
-              <h4 class="h6 m-0"><a href="{{ uw_accessibility_href }}" class="d-inline-block" target="_top">Course Accessibility Report</a> <span class="badge badge-warning">APP</span></h4>
+              <h4 class="h6 m-0"><a href="{{ uw_accessibility_href }}" class="d-inline-block" target="_top">Course
+                  Accessibility Report</a> <span class="badge badge-warning">APP</span></h4>
               <p class="m-0 font-weight-light">Check course content for accessibility issues.</p>
             </li>
             {% endif %}
             {% if myuw_classlist_href %}
             <li class="list-group-item">
-              <h4 class="h6 m-0"><a href="{{ myuw_classlist_href }}" class="d-inline-block" target="_blank">MyUW Classlist</a></h4>
+              <h4 class="h6 m-0"><a href="{{ myuw_classlist_href }}" class="d-inline-block" target="_blank">MyUW
+                  Classlist</a></h4>
               <p class="m-0 font-weight-light">View students in your course.</p>
             </li>
             {% endif %}
             {% if uw_coda_href %}
             <li class="list-group-item">
-              <h4 class="h6 m-0"><a href="{{ uw_coda_href }}" class="d-inline-block" target="_blank">MyUW Course Instructor Dashboard</a></h4>
+              <h4 class="h6 m-0"><a href="{{ uw_coda_href }}" class="d-inline-block" target="_blank">MyUW Course
+                  Instructor Dashboard</a></h4>
               <p class="m-0 font-weight-light">View aggregated data from courses you’re teaching.</p>
             </li>
             {% endif %}
@@ -133,14 +143,19 @@
             {% if uw_zoom_href %}
             <li class="list-group-item">
               <h4 class="h6 m-0">
-                <a href="{{ uw_zoom_href }}" class="d-inline-block" target="_top">Zoom</a> <span class="badge badge-warning">APP</span>
-                <a class="small text-muted lti-more" data-toggle="collapse" href="#collapseZoom" role="button" aria-expanded="false" aria-controls="collapseExample">show resources</a>
+                <a href="{{ uw_zoom_href }}" class="d-inline-block" target="_top">Zoom</a> <span
+                  class="badge badge-warning">APP</span>
+                <a class="small text-muted lti-more" data-toggle="collapse" href="#collapseZoom" role="button"
+                  aria-expanded="false" aria-controls="collapseExample">show resources</a>
               </h4>
               <p class="m-0 font-weight-light">Schedule and start online class sessions.</p>
               <div class="collapse" id="collapseZoom">
                 <ul class="mt-1 list-unstyled small">
-                  <li><a href="https://itconnect.uw.edu/connect/phones/conferencing/zoom-video-conferencing/zoom-canvas/" target="_blank" class="d-inline-block">Teaching Guide: Zoom App in Canvas</a></li>
-                  <li><a href="https://teaching.washington.edu/topics/teaching-remotely/technology-how-to-guides/" target="_blank" class="d-inline-block">Technology How-To Guide</a></li>
+                  <li><a
+                      href="https://itconnect.uw.edu/connect/phones/conferencing/zoom-video-conferencing/zoom-canvas/"
+                      target="_blank" class="d-inline-block">Teaching Guide: Zoom App in Canvas</a></li>
+                  <li><a href="https://teaching.washington.edu/topics/teaching-remotely/technology-how-to-guides/"
+                      target="_blank" class="d-inline-block">Technology How-To Guide</a></li>
                 </ul>
               </div>
             </li>
@@ -148,13 +163,16 @@
             {% if uw_panopto_href %}
             <li class="list-group-item">
               <h4 class="h6 m-0">
-                <a href="{{ uw_panopto_href }}" class="d-inline-block " target="_top">Panopto Recordings</a> <span class="badge badge-warning">APP</span>
-                <a class="small text-muted lti-more" data-toggle="collapse" href="#collapsePanaptoRecordings" role="button" aria-expanded="false" aria-controls="collapseExample">show resources</a>
+                <a href="{{ uw_panopto_href }}" class="d-inline-block " target="_top">Panopto Recordings</a> <span
+                  class="badge badge-warning">APP</span>
+                <a class="small text-muted lti-more" data-toggle="collapse" href="#collapsePanaptoRecordings"
+                  role="button" aria-expanded="false" aria-controls="collapseExample">show resources</a>
               </h4>
               <p class="m-0 font-weight-light">View previous Panopto Recordings.</p>
               <div class="collapse" id="collapsePanaptoRecordings">
                 <ul class="mt-1 list-unstyled small">
-                  <li><a href="https://itconnect.uw.edu/learn/tools/panopto/share-recordings/" target="_blank" class="d-inline-block">Share Recordings in Canvas</a></li>
+                  <li><a href="https://itconnect.uw.edu/learn/tools/panopto/share-recordings/" target="_blank"
+                      class="d-inline-block">Share Recordings in Canvas</a></li>
                 </ul>
               </div>
             </li>
@@ -162,13 +180,17 @@
             {% if uw_panopto_scheduler_href %}
             <li class="list-group-item">
               <h4 class="h6 m-0">
-                <a href="{{ uw_panopto_scheduler_href }}" class="d-inline-block " target="_top">Panopto Recording Scheduler</a> <span class="badge badge-warning">APP</span>
-                <a class="small text-muted lti-more" data-toggle="collapse" href="#collapsePanaptoScheduler" role="button" aria-expanded="false" aria-controls="collapseExample">show resources</a>
+                <a href="{{ uw_panopto_scheduler_href }}" class="d-inline-block " target="_top">Panopto Recording
+                  Scheduler</a> <span class="badge badge-warning">APP</span>
+                <a class="small text-muted lti-more" data-toggle="collapse" href="#collapsePanaptoScheduler"
+                  role="button" aria-expanded="false" aria-controls="collapseExample">show resources</a>
               </h4>
               <p class="m-0 font-weight-light">Schedule lecture recordings for your course with Panopto.</p>
-               <div class="collapse" id="collapsePanaptoScheduler">
+              <div class="collapse" id="collapsePanaptoScheduler">
                 <ul class="mt-1 list-unstyled small">
-                  <li><a href="https://itconnect.uw.edu/learn/tools/panopto/schedule-recordings/auto-sched/" target="_blank" class="d-inline-block">Schedule Lecture Capture (Automatically, via Canvas)</a></li>
+                  <li><a href="https://itconnect.uw.edu/learn/tools/panopto/schedule-recordings/auto-sched/"
+                      target="_blank" class="d-inline-block">Schedule Lecture Capture (Automatically, via Canvas)</a>
+                  </li>
                 </ul>
               </div>
             </li>
@@ -176,13 +198,16 @@
             {% if uw_poll_everywhere_href %}
             <li class="list-group-item">
               <h4 class="h6 m-0">
-                <a href="{{ uw_poll_everywhere_href }}" class="d-inline-block " target="_top">Poll Everywhere</a> <span class="badge badge-warning">APP</span>
-                  <a class="small text-muted lti-more" data-toggle="collapse" href="#collapsePollEverywhere" role="button" aria-expanded="false" aria-controls="collapseExample">show resources</a>
+                <a href="{{ uw_poll_everywhere_href }}" class="d-inline-block " target="_top">Poll Everywhere</a> <span
+                  class="badge badge-warning">APP</span>
+                <a class="small text-muted lti-more" data-toggle="collapse" href="#collapsePollEverywhere" role="button"
+                  aria-expanded="false" aria-controls="collapseExample">show resources</a>
               </h4>
               <p class="m-0 font-weight-light">Create poll responses for your classes.</p>
-               <div class="collapse" id="collapsePollEverywhere">
+              <div class="collapse" id="collapsePollEverywhere">
                 <ul class="mt-1 list-unstyled small">
-                  <li><a href="https://itconnect.uw.edu/learn/tools/polleverywhere/" target="_blank" class="d-inline-block">IT Connect Help</a></li>
+                  <li><a href="https://itconnect.uw.edu/learn/tools/polleverywhere/" target="_blank"
+                      class="d-inline-block">IT Connect Help</a></li>
                 </ul>
               </div>
             </li>
@@ -190,29 +215,22 @@
           </ul>
         </div>
 
-       </div>
+      </div>
     </div>
 
 
-    <h2 class="h4 mb-4">Teaching Resources (provided by)</h2>
+    <h2 class="h4 mb-4">Teaching Resources</h2>
 
     <div class="row mb-3">
       <div class="col-md-4">
 
-        <h3 class="h5">Campus</h3>
+        <h3 class="h5">Guides</h3>
         <div class="card mb-3">
           <ul class="list-group list-group-flush">
             <li class="list-group-item">
-              <h4 class="h6 m-0"><a href="https://teaching.washington.edu/topics/teaching-remotely/" target="_blank" class="d-block">Teaching Remotely</a></h4>
+              <h4 class="h6 m-0"><a href="https://teaching.washington.edu/topics/teaching-remotely/" target="_blank"
+                  class="d-block">Teaching Remotely</a></h4>
               <p class="m-0 font-weight-light">Learn best practices for effective remote instruction.</p>
-            </li>
-            <li class="list-group-item">
-              <h4 class="h6 m-0"><a href="https://canvas.uw.edu/courses/1392969" target="_blank" class="d-block">Teaching with UW Technologies</a></h4>
-              <p class="m-0 font-weight-light">Learn more about technology you can use to support online instruction.</p>
-            </li>
-            <li class="list-group-item">
-              <h4 class="h6 m-0"><a href="https://itconnect.uw.edu/learn/workshops/" target="_blank" class="d-block">Workshops</a></h4>
-              <p class="m-0 font-weight-light">Participate in workshops on Canvas, Zoom, and Panopto</p>
             </li>
           </ul>
         </div>
@@ -220,16 +238,26 @@
       </div>
       <div class="col-md-4">
 
-        <h3 class="h5">Tacoma</h3>
+        <h3 class="h5">Courses</h3>
         <div class="card mb-3">
           <ul class="list-group list-group-flush">
             <li class="list-group-item">
-              <h4 class="h6 m-0"><a href="https://canvas.uw.edu/courses/1418620" target="_blank" class="d-block">Hybrid and Online Teacher Training Course</a></h4>
-              <p class="m-0 font-weight-light">Learn about developing an engaging, pedagogically sound online or hybrid course in Canvas through a self-paced course.</p>
+              <h4 class="h6 m-0"><a href="https://canvas.uw.edu/courses/1392969" target="_blank"
+                  class="d-block">Teaching with UW Technologies</a></h4>
+              <p class="m-0 font-weight-light">Learn more about technology you can use to support online instruction through a self-paced course.
+              </p>
             </li>
             <li class="list-group-item">
-              <h4 class="h6 m-0"><a href="https://canvas.uw.edu/courses/1076981" target="_blank" class="d-block">Effective Strategies for Online Group Work</a></h4>
-              <p class="m-0 font-weight-light">Discover common issues with group work and strategies that can be implemented to facilitate a productive experience for all members.</p>
+              <h4 class="h6 m-0"><a href="https://canvas.uw.edu/courses/1418620" target="_blank" class="d-block">Hybrid
+                  and Online Teacher Training Course</a></h4>
+              <p class="m-0 font-weight-light">Learn about developing an engaging, pedagogically sound online or hybrid
+                course in Canvas through a self-paced course provided by UW Tacoma.</p>
+            </li>
+            <li class="list-group-item">
+              <h4 class="h6 m-0"><a href="https://canvas.uw.edu/courses/1076981" target="_blank"
+                  class="d-block">Effective Strategies for Online Group Work</a></h4>
+              <p class="m-0 font-weight-light">Discover common issues with group work and strategies that can be
+                implemented to facilitate a productive experience for all members.</p>
             </li>
             <li class="list-group-item">
               <h4 class="h6 m-0"><a href="#" class="d-block ">Learn by Topic Toolkits</a></h4>
@@ -242,9 +270,14 @@
 
       <div class="col-md-4">
 
-        <h3 class="h5">Bothell</h3>
+        <h3 class="h5">Support</h3>
         <div class="card mb-3">
           <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <h4 class="h6 m-0"><a href="https://itconnect.uw.edu/learn/workshops/" target="_blank"
+                  class="d-block">Workshops</a></h4>
+              <p class="m-0 font-weight-light">Participate in workshops on Canvas, Zoom, and Panopto.</p>
+            </li>
             <li class="list-group-item">
               <h4 class="h6 m-0"><a href="#" target="_blank" class="d-block ">Link TBD</a></h4>
               <p class="m-0 font-weight-light">blurb coming soon...</p>
