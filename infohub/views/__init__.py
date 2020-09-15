@@ -92,7 +92,8 @@ class InfoHubView(BLTIView):
                     ext_id=ext_id,
                     canvas_course_id=self.blti.canvas_course_id,
                     course_sis_id=self.blti.course_sis_id,
-                    course_sws_id=self._sis_to_sws(self.blti.course_sis_id))
+                    course_sws_id=self._sis_to_sws(self.blti.course_sis_id),
+                    canvas_api_domain=self.blti.canvas_api_domain)
 
         return context
 
