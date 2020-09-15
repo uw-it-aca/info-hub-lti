@@ -3,6 +3,7 @@ from django.shortcuts import redirect
 from blti import BLTIException
 from blti.views import BLTILaunchView, BLTIView
 from blti.validators import Roles
+from uw_canvas.models import CanvasCourse
 import re
 
 
@@ -92,7 +93,8 @@ class InfoHubView(BLTIView):
                     ext_id=ext_id,
                     canvas_course_id=self.blti.canvas_course_id,
                     course_sis_id=self.blti.course_sis_id,
-                    course_sws_id=self._sis_to_sws(self.blti.course_sis_id),
+                    course_sws_id=CanvasCourse(
+                        sis_course_id=self.blti.course_sis_id).sws_course_id(),
                     canvas_api_domain=self.blti.canvas_api_domain)
 
         return context
@@ -106,10 +108,3 @@ class InfoHubView(BLTIView):
                 return True
 
         return False
-
-    def _sis_to_sws(self, course_sis_id):
-        m = re.match(('^([0-9]{4})-(autumn|winter|spring|summer)-' +
-                      '([^-]+)-([0-9]+)-([A-Z]+)$'), course_sis_id)
-        return "{year},{quarter},{curric},{course}/{section}".format(
-            year=m.group(1), quarter=m.group(2), curric=m.group(3),
-            course=m.group(4), section=m.group(5)) if m else ""
