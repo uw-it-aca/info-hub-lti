@@ -1,0 +1,86 @@
+autoscaling:
+  enabled: true
+  minReplicas: 1
+  maxReplicas: 2
+targetAverageUtilization: 100
+resources:
+  limits:
+    cpu: 1.0
+    memory: 768Mi
+  requests:
+    cpu: 100m
+    memory: 700Mi
+ingress:
+  enabled: true
+  tls:
+    myuw:
+      secretName: test-infohub.canvas.uw.edu-ingress-cert
+      hosts:
+        - test-infohub.canvas.uw.edu
+  hosts:
+    myuw:
+      host: test-infohub.canvas.uw.edu
+      paths:
+        - "/"
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt
+lifecycle:
+  enabled: true
+  preStop:
+    enabled: true
+affinity:
+   podsSpanNodes: true
+readiness:
+  enabled: true
+database:
+  engine: null
+repo: infohub
+instance: test
+image:
+  repository: registry.hub.docker.com/acait/infohub
+  tag: IMAGE_TAG
+memcached:
+  enabled: true
+  replicaCount: 1
+  updateStrategy:
+    type: RollingUpdate
+environmentVariables:
+  - name: CLUSTER_CNAME
+    value: test-infohub.canvas.uw.edu
+  - name: AUTH
+    value: BLTI
+  - name: ENV
+    value: dev
+  - name: SESSION_BACKEND
+    value: MEMCACHED
+externalSecrets:
+  enabled: true
+  secrets:
+    - name: test-infohub.canvas.uw.edu-secrets
+      externalKey: axdd/kv/data/infohub/test/secrets
+      data:
+        - name: django-secret
+          property: django-secret
+        - name: lti-consumers
+          property: lti-consumers
+        - name: blti-aes-key
+          property: blti-aes-key
+        - name: blti-aes-iv
+          property: blti-aes-iv
+environmentVariablesSecrets:
+  django-secret:
+    name: DJANGO_SECRET
+    secretName: test-infohub.canvas.uw.edu-secrets
+    secretKey: django-secret
+  infohubBLTICONSUMERS:
+    name: LTI_CONSUMERS
+    secretName: test-infohub.canvas.uw.edu-secrets
+    secretKey: lti-consumers
+  infohubBLTIAESKey:
+    name: BLTI_AES_KEY
+    secretName: test-infohub.canvas.uw.edu-secrets
+    secretKey: blti-aes-key
+  infohubBLTIAESIV:
+    name: BLTI_AES_IV
+    secretName: test-infohub.canvas.uw.edu-secrets
+    secretKey: blti-aes-iv

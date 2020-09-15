@@ -1,0 +1,8 @@
+[run]
+source = infolib
+parallel = True
+
+[paths]
+source =
+  infolib/
+  /app/infolib/
