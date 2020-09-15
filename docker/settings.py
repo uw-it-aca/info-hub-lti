@@ -157,6 +157,12 @@ CANVAS_EXTERNAL_TOOLS = {
             'subaccounts': ['uwcourse:']
         }
     ],
+    'uw_add_people': [
+        {
+            'href_spec': 'https://{canvas_api_domain}/courses/{canvas_course_id}/users?add_people=true',
+            'subaccounts': ['uwcourse:']
+        }
+    ],
     'uw_coda': [
         {
             'href_spec': 'https://coda.uw.edu/#{course_sis_id}',
