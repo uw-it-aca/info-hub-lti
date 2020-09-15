@@ -5,41 +5,11 @@
 {% block content %}
 <div class="canvas-infohub-container">
 
-  <p class="m-0 font-weight-light">Campus:
-    {% if is_seattle %}
-    Seattle
-    {% elif is_tacoma %}
-    Tacoma
-    {% elif is_bothell %}
-    Bothell
-    {% endif %}
-  </p>
-
-  <p class="m-0 font-weight-light">Role:
-    {% if is_instructor %}
-    Instructor
-    {% endif %}
-
-    {% if is_ta %}
-    Teaching Assistant
-    {% endif %}
-
-    {% if is_student %}
-    Student
-    {% endif %}
-
-    {% if is_admin %}
-    Admin
-    {% endif %}
-
-    - {{ course_long_name }} ({{ canvas_course_id }})
-  </p>
-
   <div class="container-fluid mt-4">
 
     <div class="row">
       <div class="col">
-        <h1 class="h2 mb-5" id="uw_infohub_header">UW Tools &amp; Resources</h1>
+        <h1 class="h2 mb-3" id="uw_infohub_header">UW Tools &amp; Resources</h1>
 
         <div class="p-3 mx-3 mb-5 rounded" style="background: #f4f2ea;">
           <div class="h3 text-center">Welcome, {{ user_first_name }}!</div>
@@ -60,7 +30,7 @@
 
     {% if is_instructor or is_admin %}
 
-    <h2 class="h4 mb-4">Class Resources (instructor)</h2>
+    <h2 class="h4 mb-3">Class Resources (instructor)</h2>
 
     <div class="row mb-5">
       <div class="col-md-4">
@@ -283,7 +253,7 @@
 
   {% if is_ta or is_admin %}
 
-    <h2 class="h4 mb-4">Class Resources (ta)</h2>
+    <h2 class="h4 mb-3">Class Resources (ta)</h2>
 
     <div class="row mb-5">
       <div class="col-md-4">
@@ -506,7 +476,7 @@
     {% endif %}
 
     {% if is_instructor or is_ta or is_admin %}
-    <h2 class="h4 mb-4">Teaching Resources (instructors and ta)</h2>
+    <h2 class="h4 mb-3">Teaching Resources (instructors and ta)</h2>
 
     <div class="row mb-3">
       <div class="col-md-4">
@@ -585,7 +555,7 @@
    {% endif %}
 
     {% if is_student or is_admin %}
-    <h2 class="h4 mb-4">Student Resources (student)</h2>
+    <h2 class="h4 mb-3">Student Resources (student)</h2>
 
     <div class="row">
       <div class="col">
