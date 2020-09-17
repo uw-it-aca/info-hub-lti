@@ -9,7 +9,13 @@
 
     <div class="row">
       <div class="col">
-        <h1 class="h2 mb-3" id="uw_infohub_header">UW Tools &amp; Resources</h1>
+        
+        <h1 class="h2 mb-3" id="uw_infohub_header">
+          {% if is_instructor or is_ta %}UW Tools &amp; Resources
+          {% elif is_student %}Online Learning Support{% else %}
+          UW Information Hub (for Admins)
+          {% endif %}
+        </h1>
 
         <div class="p-3 mx-3 mb-5 rounded" style="background: #f4f2ea;">
           <div class="h3 text-center">Welcome, {{ user_first_name }}!</div>
@@ -257,7 +263,8 @@
       </div>
     </div>
 
-    <h2 class="h4 mb-3">Teaching Resources</h2>
+    <h2 class="h4 mb-0">Teaching Resources</h2>
+    <p class="lead">Explore remote teaching resources provided as a tri-campus collaborative effort</p>
 
     <div class="row mb-3">
       <div class="col-md-4">
@@ -271,9 +278,11 @@
               <p class="m-0 font-weight-light">Learn best practices for effective remote instruction.</p>
             </li>
             <li class="list-group-item">
-              <h4 class="h6 m-0"><a
+              <h4 class="h6 m-0">
+                <a
                   href="http://uwtdev3.tacoma.uw.edu/~jamesini/uwtd8main_staging/web/digital-learning/topics-toolkits"
-                  class="d-block ">Advance your Teaching Topics & Toolkits</a></h4>
+                  class="d-inline-block">Advance your Teaching Topics &amp; Toolkits</a> <span class="badge bg-purple text-white text-uppercase">Tacoma</span>
+              </h4>
               <p class="m-0 font-weight-light">Explore new topics and toolkits to advance your knowledge, improve your
                 course, and enhance the online learning experience for your students.</p>
             </li>
@@ -305,9 +314,12 @@
                 facilitate a productive experience for all members.</p>
             </li>
             <li class="list-group-item">
-              <h4 class="h6 m-0"><a
+              <h4 class="h6 m-0">
+                <a
                   href="https://www.uwb.edu/it/training-and-support/workshops-events/teaching-online-courses"
-                  target="_blank" class="d-block">Teaching Online 101 & 201</a></h4>
+                  target="_blank" class="d-inline-block">Teaching Online 101 & 201</a> <span class="badge bg-purple text-white text-uppercase">Bothell</span>
+              
+              </h4>
               <p class="m-0 font-weight-light">Fully-online, asynchronous workshops designed to enhance your digital
                 course design and digital pedagogy skill set.</p>
             </li>
@@ -376,7 +388,7 @@
       </div>
       <div class="col-md-4">
 
-        <h3 class="h5">Health &amp; Wellbeing</h3>
+        <h3 class="h5">Health &amp; Well-being</h3>
         <div class="card mb-3">
           <ul class="list-group list-group-flush">
             <li class="list-group-item">
