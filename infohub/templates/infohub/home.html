@@ -9,7 +9,7 @@
 
     <div class="row">
       <div class="col">
-        
+
         <h1 class="h2 mb-3" id="uw_infohub_header">
           {% if is_instructor or is_ta %}UW Tools &amp; Resources
           {% elif is_student %}Online Learning Support{% else %}
@@ -22,12 +22,10 @@
           {% if is_instructor or is_ta %}
           <p class="lead text-center">Explore different resources that will help you design your course and teach
             remotely!</p>
-          {% endif %}
-          {% if is_student %}
+          {% elif is_student %}
           <p class="lead text-center">Explore different resources that will help you be more effective in learning
             remotely!</p>
-          {% endif %}
-          {% if is_admin %}
+          {% else %}
           <p class="lead text-center">Here to help you be the best remote adminstrator ever!</p>
           {% endif %}
         </div>
@@ -48,8 +46,12 @@
             <!-- Add People and Manage UW Groups is for Instructor/Admin ONLY -->
             <li class="list-group-item">
               <h4 class="h6 m-0">
-                <a href="{{ uw_add_people_href }}" class="d-inline-block " target="_top">Add People</a> <span
-                  class="badge badge-warning">APP</span>
+                <a href="{{ uw_add_people_href }}" class="d-inline-block " target="_top">Add People</a> <svg width="1em"
+                  height="1em" viewBox="0 0 16 16" class="bi bi-wrench" fill="currentColor"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd"
+                    d="M.102 2.223A3.004 3.004 0 0 0 3.78 5.897l6.341 6.252A3.003 3.003 0 0 0 13 16a3 3 0 1 0-.851-5.878L5.897 3.781A3.004 3.004 0 0 0 2.223.1l2.141 2.142L4 4l-1.757.364L.102 2.223zm13.37 9.019L13 11l-.471.242-.529.026-.287.445-.445.287-.026.529L11 13l.242.471.026.529.445.287.287.445.529.026L13 15l.471-.242.529-.026.287-.445.445-.287.026-.529L15 13l-.242-.471-.026-.529-.445-.287-.287-.445-.529-.026z" />
+                </svg>
                 <a class="small text-muted text-nowrap lti-more" data-toggle="collapse" href="#collapseAddPeople"
                   role="button" aria-expanded="false" aria-controls="collapseExample">show resources</a>
               </h4>
@@ -65,8 +67,12 @@
             {% if uw_groups_href %}
             <li class="list-group-item">
               <h4 class="h6 m-0">
-                <a href="{{ uw_groups_href }}" class="d-inline-block" target="_top">Manage UW Groups</a> <span
-                  class="badge badge-warning">APP</span>
+                <a href="{{ uw_groups_href }}" class="d-inline-block" target="_top">Manage UW Groups</a> <svg
+                  width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-wrench" fill="currentColor"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd"
+                    d="M.102 2.223A3.004 3.004 0 0 0 3.78 5.897l6.341 6.252A3.003 3.003 0 0 0 13 16a3 3 0 1 0-.851-5.878L5.897 3.781A3.004 3.004 0 0 0 2.223.1l2.141 2.142L4 4l-1.757.364L.102 2.223zm13.37 9.019L13 11l-.471.242-.529.026-.287.445-.445.287-.026.529L11 13l.242.471.026.529.445.287.287.445.529.026L13 15l.471-.242.529-.026.287-.445.445-.287.026-.529L15 13l-.242-.471-.026-.529-.445-.287-.287-.445-.529-.026z" />
+                </svg>
                 <a class="small text-muted text-nowrap lti-more" data-toggle="collapse" href="#collapseManageGroups"
                   role="button" aria-expanded="false" aria-controls="collapseExample">show resources</a>
               </h4>
@@ -87,17 +93,25 @@
 
             <li class="list-group-item">
               <h4 class="h6 m-0">
-                <a href="https://itconnect.uw.edu/learn/tools/canvas/canvas-help-for-instructors/getting-started/canvas-course-template/" class="d-inline-block ">Apply Templates</a> <span class="badge badge-warning">APP</span>
+                <a href="https://itconnect.uw.edu/learn/tools/canvas/canvas-help-for-instructors/getting-started/canvas-course-template/"
+                  class="d-inline-block ">Apply Templates</a> <svg width="1em" height="1em" viewBox="0 0 16 16"
+                  class="bi bi-wrench" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd"
+                    d="M.102 2.223A3.004 3.004 0 0 0 3.78 5.897l6.341 6.252A3.003 3.003 0 0 0 13 16a3 3 0 1 0-.851-5.878L5.897 3.781A3.004 3.004 0 0 0 2.223.1l2.141 2.142L4 4l-1.757.364L.102 2.223zm13.37 9.019L13 11l-.471.242-.529.026-.287.445-.445.287-.026.529L11 13l.242.471.026.529.445.287.287.445.529.026L13 15l.471-.242.529-.026.287-.445.445-.287.026-.529L15 13l-.242-.471-.026-.529-.445-.287-.287-.445-.529-.026z" />
+                </svg>
               </h4>
               <p class="m-0 font-weight-light">View and apply templates that will help create courses that are easy for
-                students
-                to navigate.</p>
+                students to navigate.</p>
             </li>
             {% if uw_grade_scale_href %}
             <li class="list-group-item">
               <h4 class="h6 m-0">
                 <a href="{{ uw_grade_scale_href }}" class="d-inline-block" target="_top">4.0 Grade
-                  Scale</a> <span class="badge badge-warning">APP</span>
+                  Scale</a> <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-wrench" fill="currentColor"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd"
+                    d="M.102 2.223A3.004 3.004 0 0 0 3.78 5.897l6.341 6.252A3.003 3.003 0 0 0 13 16a3 3 0 1 0-.851-5.878L5.897 3.781A3.004 3.004 0 0 0 2.223.1l2.141 2.142L4 4l-1.757.364L.102 2.223zm13.37 9.019L13 11l-.471.242-.529.026-.287.445-.445.287-.026.529L11 13l.242.471.026.529.445.287.287.445.529.026L13 15l.471-.242.529-.026.287-.445.445-.287.026-.529L15 13l-.242-.471-.026-.529-.445-.287-.287-.445-.529-.026z" />
+                </svg>
                 <a class="small text-muted text-nowrap lti-more" data-toggle="collapse" href="#collapseGradeScale"
                   role="button" aria-expanded="false" aria-controls="collapseExample">show resources</a>
               </h4>
@@ -127,7 +141,11 @@
             <li class="list-group-item">
               <h4 class="h6 m-0">
                 <a href="{{ uw_classlist_href }}" class="d-inline-block" target="_top">Photo Class
-                  List</a> <span class="badge badge-warning">APP</span>
+                  List</a> <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-wrench" fill="currentColor"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd"
+                    d="M.102 2.223A3.004 3.004 0 0 0 3.78 5.897l6.341 6.252A3.003 3.003 0 0 0 13 16a3 3 0 1 0-.851-5.878L5.897 3.781A3.004 3.004 0 0 0 2.223.1l2.141 2.142L4 4l-1.757.364L.102 2.223zm13.37 9.019L13 11l-.471.242-.529.026-.287.445-.445.287-.026.529L11 13l.242.471.026.529.445.287.287.445.529.026L13 15l.471-.242.529-.026.287-.445.445-.287.026-.529L15 13l-.242-.471-.026-.529-.445-.287-.287-.445-.529-.026z" />
+                </svg>
               </h4>
               <p class="m-0 font-weight-light">View photos of students from your Canvas course.</p>
             </li>
@@ -136,7 +154,11 @@
             <li class="list-group-item">
               <h4 class="h6 m-0">
                 <a href="{{ uw_accessibility_href }}" class="d-inline-block" target="_top">Course
-                  Accessibility Report</a> <span class="badge badge-warning">APP</span>
+                  Accessibility Report</a> <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-wrench"
+                  fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd"
+                    d="M.102 2.223A3.004 3.004 0 0 0 3.78 5.897l6.341 6.252A3.003 3.003 0 0 0 13 16a3 3 0 1 0-.851-5.878L5.897 3.781A3.004 3.004 0 0 0 2.223.1l2.141 2.142L4 4l-1.757.364L.102 2.223zm13.37 9.019L13 11l-.471.242-.529.026-.287.445-.445.287-.026.529L11 13l.242.471.026.529.445.287.287.445.529.026L13 15l.471-.242.529-.026.287-.445.445-.287.026-.529L15 13l-.242-.471-.026-.529-.445-.287-.287-.445-.529-.026z" />
+                </svg>
                 <a class="small text-muted text-nowrap lti-more" data-toggle="collapse"
                   href="#collapseCourseAccessibility" role="button" aria-expanded="false"
                   aria-controls="collapseCourseAccessibility">show resources</a>
@@ -187,8 +209,11 @@
             {% if uw_zoom_href %}
             <li class="list-group-item">
               <h4 class="h6 m-0">
-                <a href="{{ uw_zoom_href }}" class="d-inline-block" target="_top">Zoom</a> <span
-                  class="badge badge-warning">APP</span>
+                <a href="{{ uw_zoom_href }}" class="d-inline-block" target="_top">Zoom</a> <svg width="1em" height="1em"
+                  viewBox="0 0 16 16" class="bi bi-wrench" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd"
+                    d="M.102 2.223A3.004 3.004 0 0 0 3.78 5.897l6.341 6.252A3.003 3.003 0 0 0 13 16a3 3 0 1 0-.851-5.878L5.897 3.781A3.004 3.004 0 0 0 2.223.1l2.141 2.142L4 4l-1.757.364L.102 2.223zm13.37 9.019L13 11l-.471.242-.529.026-.287.445-.445.287-.026.529L11 13l.242.471.026.529.445.287.287.445.529.026L13 15l.471-.242.529-.026.287-.445.445-.287.026-.529L15 13l-.242-.471-.026-.529-.445-.287-.287-.445-.529-.026z" />
+                </svg>
                 <a class="small text-muted text-nowrap lti-more" data-toggle="collapse" href="#collapseZoom"
                   role="button" aria-expanded="false" aria-controls="collapseExample">show resources</a>
               </h4>
@@ -207,8 +232,12 @@
             {% if uw_panopto_href %}
             <li class="list-group-item">
               <h4 class="h6 m-0">
-                <a href="{{ uw_panopto_href }}" class="d-inline-block " target="_top">Panopto Recordings</a> <span
-                  class="badge badge-warning">APP</span>
+                <a href="{{ uw_panopto_href }}" class="d-inline-block " target="_top">Panopto Recordings</a> <svg
+                  width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-wrench" fill="currentColor"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd"
+                    d="M.102 2.223A3.004 3.004 0 0 0 3.78 5.897l6.341 6.252A3.003 3.003 0 0 0 13 16a3 3 0 1 0-.851-5.878L5.897 3.781A3.004 3.004 0 0 0 2.223.1l2.141 2.142L4 4l-1.757.364L.102 2.223zm13.37 9.019L13 11l-.471.242-.529.026-.287.445-.445.287-.026.529L11 13l.242.471.026.529.445.287.287.445.529.026L13 15l.471-.242.529-.026.287-.445.445-.287.026-.529L15 13l-.242-.471-.026-.529-.445-.287-.287-.445-.529-.026z" />
+                </svg>
                 <a class="small text-muted text-nowrap lti-more" data-toggle="collapse"
                   href="#collapsePanaptoRecordings" role="button" aria-expanded="false"
                   aria-controls="collapseExample">show resources</a>
@@ -226,7 +255,11 @@
             <li class="list-group-item">
               <h4 class="h6 m-0">
                 <a href="{{ uw_panopto_scheduler_href }}" class="d-inline-block " target="_top">Panopto Recording
-                  Scheduler</a> <span class="badge badge-warning">APP</span>
+                  Scheduler</a> <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-wrench"
+                  fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd"
+                    d="M.102 2.223A3.004 3.004 0 0 0 3.78 5.897l6.341 6.252A3.003 3.003 0 0 0 13 16a3 3 0 1 0-.851-5.878L5.897 3.781A3.004 3.004 0 0 0 2.223.1l2.141 2.142L4 4l-1.757.364L.102 2.223zm13.37 9.019L13 11l-.471.242-.529.026-.287.445-.445.287-.026.529L11 13l.242.471.026.529.445.287.287.445.529.026L13 15l.471-.242.529-.026.287-.445.445-.287.026-.529L15 13l-.242-.471-.026-.529-.445-.287-.287-.445-.529-.026z" />
+                </svg>
                 <a class="small text-muted text-nowrap lti-more" data-toggle="collapse" href="#collapsePanaptoScheduler"
                   role="button" aria-expanded="false" aria-controls="collapseExample">show resources</a>
               </h4>
@@ -243,8 +276,12 @@
             {% if uw_poll_everywhere_href %}
             <li class="list-group-item">
               <h4 class="h6 m-0">
-                <a href="{{ uw_poll_everywhere_href }}" class="d-inline-block " target="_top">Poll Everywhere</a> <span
-                  class="badge badge-warning">APP</span>
+                <a href="{{ uw_poll_everywhere_href }}" class="d-inline-block " target="_top">Poll Everywhere</a> <svg
+                  width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-wrench" fill="currentColor"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd"
+                    d="M.102 2.223A3.004 3.004 0 0 0 3.78 5.897l6.341 6.252A3.003 3.003 0 0 0 13 16a3 3 0 1 0-.851-5.878L5.897 3.781A3.004 3.004 0 0 0 2.223.1l2.141 2.142L4 4l-1.757.364L.102 2.223zm13.37 9.019L13 11l-.471.242-.529.026-.287.445-.445.287-.026.529L11 13l.242.471.026.529.445.287.287.445.529.026L13 15l.471-.242.529-.026.287-.445.445-.287.026-.529L15 13l-.242-.471-.026-.529-.445-.287-.287-.445-.529-.026z" />
+                </svg>
                 <a class="small text-muted text-nowrap lti-more" data-toggle="collapse" href="#collapsePollEverywhere"
                   role="button" aria-expanded="false" aria-controls="collapseExample">show resources</a>
               </h4>
@@ -279,9 +316,9 @@
             </li>
             <li class="list-group-item">
               <h4 class="h6 m-0">
-                <a
-                  href="http://uwtdev3.tacoma.uw.edu/~jamesini/uwtd8main_staging/web/digital-learning/topics-toolkits" target="_blank"
-                  class="d-inline-block">Advance your Teaching Topics &amp; Toolkits</a> <span class="badge bg-purple text-white text-uppercase">Tacoma</span>
+                <a href="http://uwtdev3.tacoma.uw.edu/~jamesini/uwtd8main_staging/web/digital-learning/topics-toolkits"
+                  target="_blank" class="d-inline-block">Advance your Teaching Topics &amp; Toolkits <span
+                    class="badge bg-light text-purple text-uppercase font-weight-light">Tacoma</span></a>
               </h4>
               <p class="m-0 font-weight-light">Explore new topics and toolkits to advance your knowledge, improve your
                 course, and enhance the online learning experience for your students.</p>
@@ -302,23 +339,28 @@
               </p>
             </li>
             <li class="list-group-item">
-              <h4 class="h6 m-0"><a href="https://canvas.uw.edu/courses/1418620" target="_blank" class="d-inline-block">Hybrid
-                  and Online Teacher Training Course</a> <span class="badge bg-purple text-white text-uppercase">Tacoma</span></h4>
+              <h4 class="h6 m-0"><a href="https://canvas.uw.edu/courses/1418620" target="_blank"
+                  class="d-inline-block">Hybrid
+                  and Online Teacher Training Course <span
+                    class="badge bg-light text-purple text-uppercase font-weight-light">Tacoma</span></a></h4>
               <p class="m-0 font-weight-light">Learn about developing an engaging, pedagogically sound online or hybrid
                 course in Canvas.</p>
             </li>
             <li class="list-group-item">
-              <h4 class="h6 m-0"><a href="https://canvas.uw.edu/courses/1076981" target="_blank"
-                  class="d-inline-block">Effective Strategies for Online Group Work</a> <span class="badge bg-purple text-white text-uppercase">Tacoma</span></h4>
+              <h4 class="h6 m-0">
+                <a href="https://canvas.uw.edu/courses/1076981" target="_blank" class="d-inline-block">Effective
+                  Strategies for Online Group Work <span
+                    class="badge bg-light text-purple text-uppercase font-weight-light">Tacoma</span></a>
+              </h4>
               <p class="m-0 font-weight-light">Discover common issues with group work and strategies that will
                 facilitate a productive experience for all members.</p>
             </li>
             <li class="list-group-item">
               <h4 class="h6 m-0">
-                <a
-                  href="https://www.uwb.edu/it/training-and-support/workshops-events/teaching-online-courses"
-                  target="_blank" class="d-inline-block">Teaching Online 101 &amp; 201</a> <span class="badge bg-purple text-white text-uppercase">Bothell</span>
-              
+                <a href="https://www.uwb.edu/it/training-and-support/workshops-events/teaching-online-courses"
+                  target="_blank" class="d-inline-block">Teaching Online 101 &amp; 201 <span
+                    class="badge bg-light text-purple text-uppercase font-weight-light">Bothell</span></a>
+
               </h4>
               <p class="m-0 font-weight-light">Fully-online, asynchronous workshops designed to enhance your digital
                 course design and digital pedagogy skill set.</p>
@@ -366,13 +408,15 @@
             </li>
             {% if is_seattle %}
             <li class="list-group-item">
-              <h4 class="h6 m-0"><a href="https://stlp.uw.edu/overview" target="_blank" class="d-inline-block">Student Tech
+              <h4 class="h6 m-0"><a href="https://stlp.uw.edu/overview" target="_blank" class="d-inline-block">Student
+                  Tech
                   Loan Program</a></h4>
               <p class="m-0 font-weight-light">Reserve technology items for your courses.</p>
             </li>
             {% endif %}
             <li class="list-group-item">
-              <h4 class="h6 m-0"><a href="https://my.uw.edu/husky_experience/" target="_blank" class="d-inline-block">Husky
+              <h4 class="h6 m-0"><a href="https://my.uw.edu/husky_experience/" target="_blank"
+                  class="d-inline-block">Husky
                   Experience Toolkit</a></h4>
               <p class="m-0 font-weight-light">Explore articles that will help you make the most of your time at the UW.
               </p>
@@ -421,7 +465,7 @@
 
       <div class="col-md-4">
 
-        <h3 class="h5">Support</h3>
+        <h3 class="h5">Technology Support</h3>
         <div class="card mb-3">
           <ul class="list-group list-group-flush">
             <li class="list-group-item">
