@@ -11,22 +11,17 @@
       <div class="col">
 
         <h1 class="h2 mb-3" id="uw_infohub_header">
-          {% if is_instructor or is_ta %}UW Tools &amp; Resources
-          {% elif is_student %}Online Learning Support{% else %}
-          UW Resource Hub
-          {% endif %}
+          UW Resources
         </h1>
 
         <div class="p-3 mx-3 mb-5 rounded" style="background: #f4f2ea;">
-          <div class="h3 text-center">Welcome, {{ user_first_name }}!</div>
-          {% if is_instructor or is_ta %}
-          <p class="lead text-center">Explore different resources that will help you design your course and teach
-            remotely!</p>
-          {% elif is_student %}
+          <div class="h3 text-center">Welcome, {{ user_first_name }}!</div>         
+          {% if is_student %}
           <p class="lead text-center">Explore different resources that will help you be more effective in learning
             remotely!</p>
           {% else %}
-          <p class="lead text-center">Here to help you be the best remote adminstrator ever!</p>
+            <p class="lead text-center">Explore different resources that will help you design your course and teach
+            remotely!</p>
           {% endif %}
         </div>
       </div>
@@ -47,10 +42,9 @@
             <li class="list-group-item">
               <h4 class="h6 m-0">
                 <a href="{{ uw_add_people_href }}" class="d-inline-block " target="_top">Add People</a>
-                <svg role="img" aria-label="Wrench representing a tool icon" width="1em" height="1em"
-                  viewBox="0 0 16 16" class="bi bi-wrench small" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                  <path fill-rule="evenodd"
-                    d="M.102 2.223A3.004 3.004 0 0 0 3.78 5.897l6.341 6.252A3.003 3.003 0 0 0 13 16a3 3 0 1 0-.851-5.878L5.897 3.781A3.004 3.004 0 0 0 2.223.1l2.141 2.142L4 4l-1.757.364L.102 2.223zm13.37 9.019L13 11l-.471.242-.529.026-.287.445-.445.287-.026.529L11 13l.242.471.026.529.445.287.287.445.529.026L13 15l.471-.242.529-.026.287-.445.445-.287.026-.529L15 13l-.242-.471-.026-.529-.445-.287-.287-.445-.529-.026z" />
+                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-tools small" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" d="M0 1l1-1 3.081 2.2a1 1 0 0 1 .419.815v.07a1 1 0 0 0 .293.708L10.5 9.5l.914-.305a1 1 0 0 1 1.023.242l3.356 3.356a1 1 0 0 1 0 1.414l-1.586 1.586a1 1 0 0 1-1.414 0l-3.356-3.356a1 1 0 0 1-.242-1.023L9.5 10.5 3.793 4.793a1 1 0 0 0-.707-.293h-.071a1 1 0 0 1-.814-.419L0 1zm11.354 9.646a.5.5 0 0 0-.708.708l3 3a.5.5 0 0 0 .708-.708l-3-3z"/>
+                  <path fill-rule="evenodd" d="M15.898 2.223a3.003 3.003 0 0 1-3.679 3.674L5.878 12.15a3 3 0 1 1-2.027-2.027l6.252-6.341A3 3 0 0 1 13.778.1l-2.142 2.142L12 4l1.757.364 2.141-2.141zm-13.37 9.019L3.001 11l.471.242.529.026.287.445.445.287.026.529L5 13l-.242.471-.026.529-.445.287-.287.445-.529.026L3 15l-.471-.242L2 14.732l-.287-.445L1.268 14l-.026-.529L1 13l.242-.471.026-.529.445-.287.287-.445.529-.026z"/>
                 </svg>
                 <a class="small text-muted text-nowrap lti-more" data-toggle="collapse" href="#collapseAddPeople"
                   role="button" aria-expanded="false" aria-controls="collapseExample">show resources</a>
@@ -67,7 +61,8 @@
             {% if uw_groups_href %}
             <li class="list-group-item">
               <h4 class="h6 m-0">
-                <a href="{{ uw_groups_href }}" class="d-inline-block" target="_top">Manage UW Groups</a> <svg role="img"
+                <a href="{{ uw_groups_href }}" class="d-inline-block" target="_top">Manage UW Groups</a>
+                <svg role="img"
                   aria-label="Wrench representing a tool icon" width="1em" height="1em" viewBox="0 0 16 16"
                   class="bi bi-wrench small" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                   <path fill-rule="evenodd"
@@ -94,9 +89,7 @@
             <li class="list-group-item">
               <h4 class="h6 m-0">
                 <a href="https://itconnect.uw.edu/learn/tools/canvas/canvas-help-for-instructors/getting-started/canvas-course-template/"
-                  class="d-inline-block ">Apply Templates</a> <svg role="img"
-                  aria-label="Wrench representing a tool icon" width="1em" height="1em" viewBox="0 0 16 16"
-                  class="bi bi-wrench small" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  target="_blank" class="d-inline-block ">Apply Templates</a>
                   <path fill-rule="evenodd"
                     d="M.102 2.223A3.004 3.004 0 0 0 3.78 5.897l6.341 6.252A3.003 3.003 0 0 0 13 16a3 3 0 1 0-.851-5.878L5.897 3.781A3.004 3.004 0 0 0 2.223.1l2.141 2.142L4 4l-1.757.364L.102 2.223zm13.37 9.019L13 11l-.471.242-.529.026-.287.445-.445.287-.026.529L11 13l.242.471.026.529.445.287.287.445.529.026L13 15l.471-.242.529-.026.287-.445.445-.287.026-.529L15 13l-.242-.471-.026-.529-.445-.287-.287-.445-.529-.026z" />
                 </svg>
@@ -390,7 +383,7 @@
     </div>
     {% endif %}
 
-    {% if is_student or is_admin %}
+    {% if is_student %}
     <h2 class="h4 mb-3">Remote Learning Resources</h2>
 
     <div class="row mb-3">
@@ -398,8 +391,10 @@
 
         <h3 class="h5">Academic</h3>
         <div class="card mb-3">
-          {% if is_seattle %}
+
           <ul class="list-group list-group-flush">
+
+            {% if is_seattle %}
             <li class="list-group-item">
               <h4 class="h6 m-0"><a href="https://webster.uaa.washington.edu/asp/website/online-learning/"
                   target="_blank" class="d-inline-block">Online Learning Resources</a></h4>
@@ -410,23 +405,9 @@
                   target="_blank" class="d-inline-block">Find a Study Center</a></h4>
               <p class="m-0 font-weight-light">Discover study centers for your courses.</p>
             </li>
-            <li class="list-group-item">
-              <h4 class="h6 m-0"><a href="https://my.uw.edu/husky_experience/" target="_blank"
-                  class="d-inline-block">Husky
-                  Experience Toolkit</a></h4>
-              <p class="m-0 font-weight-light">Explore articles that will help you make the most of your time at the UW.
-              </p>
-            </li>
-            <li class="list-group-item">
-              <h4 class="h6 m-0"><a href="https://my.uw.edu/resources/#academics" target="_blank"
-                  class="d-inline-block">Additional Academic Resources</a></h4>
-              <p class="m-0 font-weight-light">View additional academic resources in MyUW.</p>
-            </li>
-          </ul>
-          {% endif %}
+            {% endif %}
 
-          {% if is_tacoma %}
-          <ul class="list-group list-group-flush">
+            {% if is_tacoma %}
             <li class="list-group-item">
               <h4 class="h6 m-0"><a href="https://www.tacoma.uw.edu/digital-learning/student-online-support"
                   target="_blank" class="d-inline-block">Online Learning Support</a></h4>
@@ -437,22 +418,9 @@
                   target="_blank" class="d-inline-block">Teaching and Learning Center</a></h4>
               <p class="m-0 font-weight-light">Receive academic support for your courses.</p>
             </li>
-            <li class="list-group-item">
-              <h4 class="h6 m-0"><a href="https://my.uw.edu/husky_experience/" target="_blank"
-                  class="d-inline-block">Husky Experience Toolkit</a></h4>
-              <p class="m-0 font-weight-light">Explore articles that will help you make the most of your time at the UW.
-              </p>
-            </li>
-            <li class="list-group-item">
-              <h4 class="h6 m-0"><a href="https://my.uw.edu/resources/#academics" target="_blank"
-                  class="d-inline-block">Additional Academic Resources</a></h4>
-              <p class="m-0 font-weight-light">View additional academic resources in MyUW.</p>
-            </li>
-          </ul>
-          {% endif %}
+            {% endif %}
 
-          {% if is_bothell %}
-          <ul class="list-group list-group-flush">
+            {% if is_bothell %}
             <li class="list-group-item">
               <h4 class="h6 m-0"><a href="https://www.uwb.edu/it/student-continuity" target="_blank"
                   class="d-inline-block">Student Help for Learning Online</a></h4>
@@ -465,6 +433,8 @@
               <p class="m-0 font-weight-light">Access academic support services that will assist you in your success
                 within your coursework.</p>
             </li>
+            {% endif %}
+
             <li class="list-group-item">
               <h4 class="h6 m-0"><a href="https://my.uw.edu/husky_experience/" target="_blank"
                   class="d-inline-block">Husky
@@ -477,9 +447,8 @@
                   class="d-inline-block">Additional Academic Resources</a></h4>
               <p class="m-0 font-weight-light">View additional academic resources in MyUW.</p>
             </li>
-          </ul>
-          {% endif %}
 
+          </ul>
         </div>
 
       </div>
@@ -487,8 +456,10 @@
 
         <h3 class="h5">Health &amp; Well-being</h3>
         <div class="card mb-3">
-          {% if is_seattle %}
+
           <ul class="list-group list-group-flush">
+
+            {% if is_seattle %}
             <li class="list-group-item">
               <h4 class="h6 m-0"><a href="https://www.washington.edu/counseling/covid-19/" target="_blank"
                   class="d-inline-block">Coping with COVID-19 Stress</a></h4>
@@ -507,45 +478,33 @@
               <p class="m-0 font-weight-light">Discuss your concerns with a counselor that will work with you to develop
                 a collaborative plan for next steps.</p>
             </li>
-            <li class="list-group-item">
-              <h4 class="h6 m-0"><a href="https://my.uw.edu/resources/#campuslife" target="_blank"
-                  class="d-inline-block">Additional Health &amp; Wellness Resources</a></h4>
-              <p class="m-0 font-weight-light">View additional health &amp; wellness resources in MyUW.</p>
-            </li>
-          </ul>
-          {% endif %}
+            {% endif %}
 
-          {% if is_tacoma %}
-          <ul class="list-group list-group-flush">
+            {% if is_tacoma %}
             <li class="list-group-item">
               <h4 class="h6 m-0"><a href="https://www.tacoma.uw.edu/studentcounseling" target="_blank"
                   class="d-inline-block">Counseling &amp; Psychological Services</a></h4>
               <p class="m-0 font-weight-light">Discuss your concerns with a counselor that will work with you to develop
                 a collaborative plan for next steps.</p>
             </li>
-            <li class="list-group-item">
-              <h4 class="h6 m-0"><a href="https://my.uw.edu/resources/#campuslife" target="_blank"
-                  class="d-inline-block">Additional Health &amp; Wellness Resources</a></h4>
-              <p class="m-0 font-weight-light">View additional health &amp; wellness resources in MyUW.</p>
-            </li>
-          </ul>
-          {% endif %}
+            {% endif %}
 
-          {% if is_bothell %}
-          <ul class="list-group list-group-flush">
+            {% if is_bothell %}
             <li class="list-group-item">
               <h4 class="h6 m-0"><a href="https://www.uwb.edu/studentaffairs/counseling" target="_blank"
                   class="d-inline-block">Counseling Center</a></h4>
               <p class="m-0 font-weight-light">Discuss your concerns with a counselor that will work with you to develop
                 a collaborative plan for next steps.</p>
             </li>
+            {% endif %}
+            
             <li class="list-group-item">
               <h4 class="h6 m-0"><a href="https://my.uw.edu/resources/#campuslife" target="_blank"
                   class="d-inline-block">Additional Health &amp; Wellness Resources</a></h4>
               <p class="m-0 font-weight-light">View additional health &amp; wellness resources in MyUW.</p>
             </li>
-          </ul>
-          {% endif %}
+
+          </ul> 
         </div>
 
       </div>
@@ -554,53 +513,41 @@
 
         <h3 class="h5">Technology Support</h3>
         <div class="card mb-3">
-          {% if is_seattle %}
+
           <ul class="list-group list-group-flush">
+
+            {% if is_seattle %}
             <li class="list-group-item">
               <h4 class="h6 m-0"><a href="https://stlp.uw.edu/overview" target="_blank" class="d-inline-block">Student
                   Tech Loan Program</a></h4>
               <p class="m-0 font-weight-light">Reserve technology items for your courses.</p>
             </li>
-            <li class="list-group-item">
-              <h4 class="h6 m-0"><a
-                  href="https://itconnect.uw.edu/connect/phones/conferencing/zoom-video-conferencing/uw-zoom-faq/"
-                  target="_blank" class="d-inline-block">UW Zoom FAQ</a></h4>
-              <p class="m-0 font-weight-light">View frequently asked questions about Zoom.</p>
-            </li>
-          </ul>
-          {% endif %}
+            {% endif %}
 
-          {% if is_tacoma %}
-          <ul class="list-group list-group-flush">
+            {% if is_tacoma %}
             <li class="list-group-item">
               <h4 class="h6 m-0"><a href="https://www.tacoma.uw.edu/information-technology/equipment-checkout"
                   target="_blank" class="d-inline-block">Equipment Checkout</a></h4>
               <p class="m-0 font-weight-light">Reserve technology items for your courses.</p>
             </li>
-            <li class="list-group-item">
-              <h4 class="h6 m-0"><a
-                  href="https://itconnect.uw.edu/connect/phones/conferencing/zoom-video-conferencing/uw-zoom-faq/"
-                  target="_blank" class="d-inline-block">UW Zoom FAQ</a></h4>
-              <p class="m-0 font-weight-light">View frequently asked questions about Zoom.</p>
-            </li>
-          </ul>
-          {% endif %}
+            {% endif %}
 
-          {% if is_bothell %}
-          <ul class="list-group list-group-flush">
+            {% if is_bothell %}
             <li class="list-group-item">
               <h4 class="h6 m-0"><a href="https://www.uwb.edu/it/service-catalog/teaching-learning/tech-lending-program"
                   target="_blank" class="d-inline-block">Laptop and WiFi Hotspot Lending Program</a></h4>
               <p class="m-0 font-weight-light">Request laptops or WiFi hotspots to support your remote learning.</p>
             </li>
+            {% endif %}
+
             <li class="list-group-item">
               <h4 class="h6 m-0"><a
                   href="https://itconnect.uw.edu/connect/phones/conferencing/zoom-video-conferencing/uw-zoom-faq/"
                   target="_blank" class="d-inline-block">UW Zoom FAQ</a></h4>
               <p class="m-0 font-weight-light">View frequently asked questions about Zoom.</p>
             </li>
+
           </ul>
-          {% endif %}
         </div>
 
       </div>
