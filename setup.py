@@ -20,11 +20,11 @@ setup(
     packages=['infohub'],
     include_package_data=True,
     install_requires=[
-        'Django>=2.1,<2.2',
+        'Django>=2.2.13,<3.0',
         'django-blti>=2.2.1',
-        'UW-RestClients-Canvas>=1.1.9,<2.0',
+        'UW-RestClients-Canvas>=1.1.12,<2.0',
         'django-compressor',
-        'python-memcached',
+        'uw-memcached-clients>=1.0.5,<2.0',
     ],
     license='Apache License, Version 2.0',
     description=(
