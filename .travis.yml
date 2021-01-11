@@ -1,61 +1,39 @@
 sudo: required
-
 language: python
 python:
-  - 3.6
-
+- 3.6
 services:
-  - docker
-  - memcached
-
+- docker
 os:
-  - linux
-
+- linux
 env:
   global:
-    - RELEASE_NAME="infohub"
-    - DJANGO_APP="infohub"
-    - COMMIT_HASH="$(git rev-parse --short=7 HEAD)"
-    - IMAGE_TAG="${RELEASE_NAME}:${COMMIT_HASH}"
-    - DEPLOY_SCRIPT_BASE=https://raw.githubusercontent.com/uw-it-aca/gcp-app-deploy/master
-    - secure: "B1zcwW72W7R7ZHUrYyn06G+HPv0JiFOmJTA/BLHJdaepljiGnyGw1ifL/M0pg0hhBOG7Ms5mvOw6USzrwKxRgxWYfxSCbUNNVBdWAKJDNWlAzhqjPlSMRWS008GcKXRGiti6sGWxet6Y/8ZtG+KvGOdkl+1VVeHA11vU/sTy+cuP9LANJgh4/kFCLz/tCKXZbOIvIOLsiOvxH6wam7ucljI1MY3qPZYn607+JD1zclJAmkeMtHaEZcAmJ5hcpmr5ImrZ7FCwgHhfQIOvIW1WBM+hukhET6ICX6fdevKV2UXJ0RXX0jReABqmPNEbcpVOdrPXwG+QDgk9Wvwx5/aB2aOMLtBWu1adL45Beuq+NTQhQ+fK9gnU5nK4u+Pbecz2MZxeZorENBj/QPGrPhwTmS7efOoY53RpiK4h7FmZoiCNFRCClKPX95XE1O+wy0pTmy/itWtl+G7TEnsXbEtbOe4benWnB/3HyM8EFs5oVu6licAWjUmHcAyGIHe7Xjl2cUhc3ZPVAopr/fqL97VaLEXAjBZnRd6xvT/tV9Y0eM1qZ8qxFfxY5G904pgjFwkMkTtexbns8ipka6875WrbblaHUYh/Psd1dSFQ49WejZWOsjbVyatEGhQBglU1Fsroa7+JFQ9nvLKAkJdAmDIZqigHReYEXrzlSAZmkHMrwGY="
-    - secure: "iR917wFtFO2eWBHoV5VaeIj8jhUQW+MCCJsNqO2L4QPRHA1DhBLrybinFEy7yLlxcjtvWTdQ5Ka5p8FHm+Mm7VJBZtPXvX3d7i/aBQs9gO2W6dk4LTJ1+9zKADxDG9Tw88hdZuUG773GwUjhiKFWbUzRtDGbzvQVjNs0Qj6Px7IlK4TRK0Uew0DYJfTQLI4NoD2osAgMADMvM5vvGTxsAJmcxyZcCMaUBixY5GHLb6WacJnU/4FoK/XqNywJYW1mPhbb8xUagVHarsNXynw1V0owbusfXL1fnMNbHbxsI13lVSdJs+DmsYRe6P6MumzehcF538Qc0dHurQW96Cv8fgpx7qK4dMXakw5F5FsdP1ohw5ASp/w0ZHKTywmUVHt+M2Xd447fJBj6V7cSwQeu+xgJmMpVOM2fdgxhTLqJEiEAEFsAlJXiCmM9facJx/cVn5XLsg67L8hy+0Bm/yh1CEy7vJK6Huamin5SWQSw1L59SolxvDsnijvZonVaWxqfHuRPn2Q0AHOO7JtNpQ3XqIMIkANmYe3l0e6j8MHtV936iEgVC1+uObeDY2mBfRJ9hCZqJFVbdm5QB2Uk4cAseW2Mnojp/JfhPGuCenuovbRQID6CsXqCLfL8BteMGAahXVfJYZwQ3g7jnjYqnUFPlykO2d4O6prDPwJBBk1nj/c="
-    - secure: "KSmSSKg1JDkBMbZDq332fOuk/cpoHoZMJUEFgehlU+dLAioyl6jtOcdNmK7ogjQOFDsNYk0/rVMCfcm1Mk7CpszNMjiewFk1nAP+e127oHxc4Sr0Ejg1AObQXDzIDSX2vfyUa2EGQgFoIdQr9RdFVQROjCQ0EXGzRJV/5BSXvnAAX/nsm64JbyHiUbxL7UEKZ6NxtS9wg1+4TJxzD6AVrbJ5/phTisfEIKUvKXGoj2NgPU4/VqYYb5stHaHZpyp4BbxCEU+42CtIYs+sA0GQ9bjCv1OsLoCOO9jRH9ZApp/H9wc4Vwl5AqkbfLchyoz7bAHUoBEDsz56cWFB2S7x4/Pn+mKPspza1y5TV8uw1JKnBKzmvasYyvbV1kROFBlnrSGif68+SC5ebbRo4zvjUuFnB88ZWyFvGwHc/mhCWGUQd2N0k3dzA6K6TxPrGKxEfFWCdhThriCo1CpXRYhuOwaWUsXjltpT/jUjUYSXbajaZmB/RR7s7soNYdTgej2Q2aJ/qCa4ytEmr+fbFO6dJGivi6kyJLa/F+VNBPZwV+/c2pFX3PQ8+83lbDlHBzz5GEzqnpGZg8lTT9K/Ce5fIbFsj3G/URoEp7W2g7MO/sRe22zQl2rZ5knU0KF03UCesYpxCz9czi44GJI64WwjJrOPJbQCqUVJ6kl0Wk2N8bA="
-
+  - RELEASE_NAME="infohub"
+  - DJANGO_APP="infohub"
+  - COMMIT_HASH="$(git rev-parse --short=7 HEAD)"
+  - IMAGE_TAG="${RELEASE_NAME}:${COMMIT_HASH}"
+  - DEPLOY_SCRIPT=https://raw.githubusercontent.com/uw-it-aca/gcp-app-deploy/master/travis-ci/deploy.sh
+  - GCP_JSON_KEY=gcp.json
+  - secure: hI2hKQpUYaJLAUMe8yEao6dx1yXDyjKUZho3rsFT2ws3I+Cs721LFPDz+2R+tRf7pF8jOuSp0m+I+ZVwGL2CrvnaRjjID7pnW0Xj5En4T25PpEEiwUSIDfz5m6Qbso8QDjmHMJXGEHhMLqWIE7RTIZT52+OGt6JoQkxLCku5qF7KGkTM7tgCY6ta8/Iwwim7Y0RYNnsYg9Nn9wjgv3OtJAvUPI0x9nfFGcPXtJd0a7GoAOYZrHlF9uDpEKMAIeVE/gnfCx9JfeQJ/zMzRFkhQ2ZnmPMSv36HRbri4Ax9GUy+ROdZtNpQSMcq4M+SKJ4Dowm5904f/2c35iLfy4KOEm0J93GlPHQClFPtF+T3eNR2S1vzs0LvaKpAsroFpXjzygB4V2cQzBcUsWJucDRzFu1zxlMnue/Z+qTElyiI3S1MG1AtAIH/QWfH5fhVDJ5xxXftXBjBKrEQIeMf3AUVTkDT40E9HRIihNK3vdXmxfDq58nLZYcBePBIXaYLspSLw9o014INIdzcf1SEehiLDD5JxUcgZC5FeMaVQtzIi6Epm7Fpsvw2x38u/mmpeViSAIhIN2x+aCINzTNL2c3xDypbjH/6IW3R6T0HWiqlwfHrXTQ1ZjUt3uNct9L/i1HiArky5ET4LSol6aqUJ3anzOo7T96e/sCsgybK6fiKg0g=
 install:
-  - docker build --target app-container -t "$IMAGE_TAG" .
-  - docker build -t app-test-container .
-
+- docker build --target app-container -t "$IMAGE_TAG" .
+- docker build -t app-test-container .
 before_script:
-  - pip install coverage
-  - pip install coveralls
-
+- pip install coverage
+- pip install coveralls
 script:
-  - docker run -u root -it -v /tmp:/coverage -e DJANGO_APP="$DJANGO_APP" -e "ENV=localdev" -e "AUTH=BLTI_TEST" app-test-container bash -c ". ./travis-ci/test.sh"
-
+- docker run -u root -it -v /tmp:/coverage -e DJANGO_APP="$DJANGO_APP" -e "ENV=localdev"
+  -e "AUTH=BLTI_TEST" app-test-container bash -c ". ./travis-ci/test.sh"
 after_success:
-  - cp /tmp/.coverage.* .
-  - coverage combine
-  - coveralls
-  - |
-    if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
-      case "$TRAVIS_BRANCH" in
-        "master")
-          export APP_INSTANCE="prod";
-          ;;
-        "develop")
-          export APP_INSTANCE="test";
-          ;;
-        *)
-          unset APP_INSTANCE
-          ;;
-      esac
-      if [[ "$APP_INSTANCE" ]]; then
-        curl -Ls ${DEPLOY_SCRIPT_BASE}/travis-ci/deploy.sh | bash;
-      fi
-    fi
-
-cache:
-  directories:
-    - "$HOME/helm"
-    - "$HOME/kubeval"
+- cp /tmp/.coverage.* .
+- coverage combine
+- coveralls
+- openssl aes-256-cbc -K $encrypted_0e718fcdeb51_key -iv $encrypted_0e718fcdeb51_iv
+  -in gcp.json.enc -out gcp.json -d
+deploy:
+- provider: script
+  skip_cleanup: true
+  script: curl -Ls "$DEPLOY_SCRIPT" | bash
+  on:
+    all_branches: true
+    condition: $TRAVIS_PULL_REQUEST == "false" && $TRAVIS_BRANCH =~ ^(master|develop)$
