@@ -37,7 +37,7 @@ database:
 repo: infohub
 instance: test
 image:
-  repository: registry.hub.docker.com/acait/infohub
+  repository: gcr.io/uwit-mci-axdd/infohub
   tag: IMAGE_TAG
 memcached:
   enabled: true
@@ -53,6 +53,8 @@ environmentVariables:
     value: dev
   - name: SESSION_BACKEND
     value: MEMCACHED
+  - name: WEBSERVER
+    value: nginx
 externalSecrets:
   enabled: true
   secrets:

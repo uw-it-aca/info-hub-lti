@@ -1,4 +1,4 @@
-FROM acait/django-container:1.1.19 as app-container
+FROM acait/django-container:1.2.5 as app-container
 
 ADD --chown=acait:acait infohub/VERSION /app/infohub/
 ADD --chown=acait:acait setup.py /app/
@@ -15,7 +15,7 @@ ADD --chown=acait:acait docker/ project/
 
 RUN . /app/bin/activate && python manage.py compress -f && python manage.py collectstatic --noinput
 
-FROM acait/django-test-container:1.1.19 as app-test-container
+FROM acait/django-test-container:1.2.5 as app-test-container
 
 ENV NODE_PATH=/app/lib/node_modules
 
