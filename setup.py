@@ -6,7 +6,6 @@ See the README on `GitHub
 <https://github.com/uw-it-aca/info-hub-lti>`_.
 """
 
-# The VERSION file is created by travis-ci, based on the tag name
 version_path = 'infohub/VERSION'
 VERSION = open(os.path.join(os.path.dirname(__file__), version_path)).read()
 VERSION = VERSION.replace("\n", "")
@@ -20,11 +19,11 @@ setup(
     packages=['infohub'],
     include_package_data=True,
     install_requires=[
-        'Django>=2.2.13,<3.0',
-        'django-blti>=2.2.1',
-        'UW-RestClients-Canvas>=1.1.12,<2.0',
+        'Django~=2.2',
+        'django-blti~=2.2',
+        'UW-RestClients-Canvas~=1.1',
+        'uw-memcached-clients~=1.0',
         'django-compressor',
-        'uw-memcached-clients>=1.0.5,<2.0',
     ],
     license='Apache License, Version 2.0',
     description=(
