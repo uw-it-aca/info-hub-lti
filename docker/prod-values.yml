@@ -53,8 +53,6 @@ environmentVariables:
     value: dev
   - name: SESSION_BACKEND
     value: MEMCACHED
-  - name: WEBSERVER
-    value: nginx
 externalSecrets:
   enabled: true
   secrets:

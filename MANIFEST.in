@@ -1,2 +1,0 @@
-include infohub/VERSION
-recursive-include infohub *
