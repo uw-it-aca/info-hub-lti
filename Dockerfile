@@ -15,7 +15,7 @@ ADD --chown=acait:acait docker/ project/
 
 RUN . /app/bin/activate && python manage.py compress -f && python manage.py collectstatic --noinput
 
-FROM gcr.io/uwit-mci-axdd/django-container:1.3.0 as app-test-container
+FROM gcr.io/uwit-mci-axdd/django-test-container:1.3.0 as app-test-container
 
 ENV NODE_PATH=/app/lib/node_modules
 
