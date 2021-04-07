@@ -53,6 +53,17 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@v2
 
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.6
+
+      - name: Run Python Linters
+        uses: uw-it-aca/actions/python-linters@main
+        with:
+          app_name: ${DJANGO_APP}
+          exclude_paths: 'migrations'
+
       - name: Set up Context
         id: cicd
         uses: uw-it-aca/actions/cicd-context@main
@@ -98,11 +109,6 @@ jobs:
           -e "ENV=localdev" -e "AUTH=BLTI_TEST"
           app-test-container
           bash -c ". ./docker/test.sh"
-
-      - name: Set up Python Test Dependency
-        uses: actions/setup-python@v2
-        with:
-          python-version: 3.6
 
       - name: Record Test Results
         env:
