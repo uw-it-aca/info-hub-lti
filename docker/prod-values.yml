@@ -3,13 +3,9 @@ autoscaling:
   minReplicas: 2
   maxReplicas: 4
 targetAverageUtilization: 100
-resources:
-  limits:
-    cpu: 1.0
-    memory: 768Mi
-  requests:
-    cpu: 100m
-    memory: 700Mi
+affinity:
+   podsSpanNodes: true
+
 ingress:
   enabled: true
   tls:
@@ -24,26 +20,29 @@ ingress:
         - "/"
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt
+
 lifecycle:
   enabled: true
   preStop:
     enabled: true
-affinity:
-   podsSpanNodes: true
 readiness:
   enabled: true
+
 database:
   engine: null
+
 repo: infohub
 instance: prod
 image:
   repository: gcr.io/uwit-mci-axdd/infohub
   tag: IMAGE_TAG
+
 memcached:
   enabled: true
   replicaCount: 1
   updateStrategy:
     type: RollingUpdate
+
 environmentVariables:
   - name: CLUSTER_CNAME
     value: infohub.canvas.uw.edu
@@ -53,6 +52,7 @@ environmentVariables:
     value: dev
   - name: SESSION_BACKEND
     value: MEMCACHED
+
 externalSecrets:
   enabled: true
   secrets:
@@ -67,6 +67,7 @@ externalSecrets:
           property: blti-aes-key
         - name: blti-aes-iv
           property: blti-aes-iv
+
 environmentVariablesSecrets:
   django-secret:
     name: DJANGO_SECRET
