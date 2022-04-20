@@ -1,8 +1,8 @@
 from .base_settings import *
 
 INSTALLED_APPS += [
+    'infohub.apps.InfohubConfig',
     'compressor',
-    'infohub',
 ]
 
 COMPRESS_ENABLED = True
