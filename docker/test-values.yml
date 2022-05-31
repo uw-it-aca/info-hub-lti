@@ -29,9 +29,6 @@ database:
 
 repo: infohub
 instance: test
-image:
-  repository: gcr.io/uwit-mci-axdd/infohub
-  tag: IMAGE_TAG
 
 memcached:
   enabled: true
@@ -53,7 +50,7 @@ externalSecrets:
   enabled: true
   secrets:
     - name: test-infohub.canvas.uw.edu-secrets
-      externalKey: axdd/kv/data/infohub/test/secrets
+      externalKey: infohub/test/secrets
       data:
         - name: django-secret
           property: django-secret
