@@ -21,7 +21,7 @@ setup(
     install_requires=[
         'Django~=4.2',
         'django-blti~=2.2',
-        'UW-RestClients-Canvas~=1.1',
+        'UW-RestClients-Canvas~=1.2',
         'uw-memcached-clients~=1.0',
         'django-compressor',
     ],
@@ -30,7 +30,7 @@ setup(
         'An LTI application that displays resources and tools in Canvas'),
     long_description=README,
     url='https://github.com/uw-it-aca/info-hub-lti',
-    author="UW-IT AXDD",
+    author="UW-IT T&LS",
     author_email="aca-it@uw.edu",
     classifiers=[
         'Environment :: Web Environment',
