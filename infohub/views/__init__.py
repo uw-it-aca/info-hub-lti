@@ -30,7 +30,7 @@ class InfoHubView(BLTIView):
         context['account_sis_id'] = account_sis_id
         context['canvas_account_id'] = self.blti.canvas_account_id
         context['course_sis_id'] = self.blti.course_sis_id
-        context['course_long_name'] = self.blti.data.get('context_title', '')
+        context['course_long_name'] = self.blti.title
         context['canvas_course_id'] = self.blti.canvas_course_id
         context['is_seattle'] = account_sis_id[:16] == 'uwcourse:seattle'
         context['is_tacoma'] = account_sis_id[:15] == 'uwcourse:tacoma'
