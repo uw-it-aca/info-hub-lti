@@ -20,7 +20,7 @@ setup(
     include_package_data=True,
     install_requires=[
         'Django~=4.2',
-        'django-blti @ git+https://github.com/uw-it-aca/django-blti.git@c0401ad6d2e1d5b802d6ce214f537a781ccca2da#egg=django-blti',
+        'django-blti @ git+https://github.com/uw-it-aca/django-blti.git@9396077080c074179bd97e690ac8bd9de8407a6a#egg=django-blti',
         'UW-RestClients-Canvas~=1.2',
         'uw-memcached-clients~=1.0',
         'django-compressor',

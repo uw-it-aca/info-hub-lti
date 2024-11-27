@@ -35,33 +35,11 @@ class InfoHubView(BLTIView):
         context['is_seattle'] = account_sis_id[:16] == 'uwcourse:seattle'
         context['is_tacoma'] = account_sis_id[:15] == 'uwcourse:tacoma'
         context['is_bothell'] = account_sis_id[:16] == 'uwcourse:bothell'
-        try:
-            Roles()._has_role(self.blti, ['Instructor'])
-            context['is_instructor'] = True
-        except BLTIException:
-            context['is_instructor'] = False
-            pass
 
-        try:
-            Roles()._has_role(self.blti, ['TeachingAssistant'])
-            context['is_ta'] = True
-        except BLTIException:
-            context['is_ta'] = False
-            pass
-
-        try:
-            Roles()._has_role(self.blti, ['Learner'])
-            context['is_student'] = True
-        except BLTIException:
-            context['is_student'] = False
-            pass
-
-        try:
-            Roles()._has_role(self.blti, ['Administrator'])
-            context['is_admin'] = True
-        except BLTIException:
-            context['is_admin'] = False
-            pass
+        context['is_instructor'] = self.blti.is_instructor
+        context['is_ta'] = self.blti.is_teaching_assistant
+        context['is_student'] = self.blti.is_student
+        context['is_admin'] = self.is_administrator
 
         default_href_spec = ('https://{canvas_api_domain}' +
                              '/courses/{canvas_course_id}' +
