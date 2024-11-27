@@ -39,7 +39,7 @@ class InfoHubView(BLTIView):
         context['is_instructor'] = self.blti.is_instructor
         context['is_ta'] = self.blti.is_teaching_assistant
         context['is_student'] = self.blti.is_student
-        context['is_admin'] = self.is_administrator
+        context['is_admin'] = self.blti.is_administrator
 
         default_href_spec = ('https://{canvas_api_domain}' +
                              '/courses/{canvas_course_id}' +
