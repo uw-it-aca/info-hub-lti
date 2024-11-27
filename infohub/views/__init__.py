@@ -13,7 +13,7 @@ import re
 
 class InfoHubLaunchView(BLTILaunchView):
     def post(self, request, *args, **kwargs):
-        return redirect('infohub')
+        return redirect('lti-launch')
 
 
 class InfoHubView(BLTIView):
