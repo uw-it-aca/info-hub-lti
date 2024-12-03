@@ -5,18 +5,13 @@
 from django.conf import settings
 from django.shortcuts import redirect
 from blti import BLTIException
-from blti.views import BLTILaunchView, BLTIView
+from blti.views import BLTILaunchView
 from blti.validators import Roles
 from uw_canvas.models import CanvasCourse
 import re
 
 
 class InfoHubLaunchView(BLTILaunchView):
-    def post(self, request, *args, **kwargs):
-        return redirect('lti-launch')
-
-
-class InfoHubView(BLTIView):
     template_name = 'infohub/home.html'
 
     def get_context_data(self, **kwargs):
