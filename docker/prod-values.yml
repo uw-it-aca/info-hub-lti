@@ -112,13 +112,13 @@ configmaps:
       {
         "https://canvas.uw.edu": [{
           "default": true,
-          "client_id": "100000000000810",
+          "client_id": "100000000000811",
           "auth_login_url": "https://sso.canvaslms.com/api/lti/authorize_redirect",
           "auth_token_url": "https://sso.canvaslms.com/login/oauth2/token",
           "key_set_url": "https://sso.canvaslms.com/api/lti/security/jwks",
           "key_set": null,
           "private_key_file": "/lti/keys/private-key-1.key",
           "public_key_file": "/lti/keys/public-key-1.key",
-          "deployment_ids": ["203997:c61ffdb94ad935f3abe694d5f29862298b991894"]
+          "deployment_ids": ["206138:82ea3323587ae330766ae046461fd35c747ed747"]
         }]
       }
