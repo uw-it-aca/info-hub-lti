@@ -73,10 +73,6 @@ externalSecrets:
           property: private-key-1.key
         - name: public-key-1.key
           property: public-key-1.key
-        - name: private-key-2.key
-          property: private-key-2.key
-        - name: public-key-2.key
-          property: public-key-2.key
 
 environmentVariablesSecrets:
   django-secret:
