@@ -115,7 +115,7 @@ configmaps:
           "key_set_url": "https://sso.test.canvaslms.com/api/lti/security/jwks",
           "private_key_file": "/lti/keys/private-key-1.key",
           "public_key_file": "/lti/keys/public-key-1.key",
-          "deployment_ids": ["208222:c61ffdb94ad935f3abe694d5f29862298b991894",
-                    "208226:3bc8ed0c9ea4aa8abb5ce6bf4693e1fd0e2c9d67"]
+          "deployment_ids": ["210511:3bc8ed0c9ea4aa8abb5ce6bf4693e1fd0e2c9d67",
+                             "208226:3bc8ed0c9ea4aa8abb5ce6bf4693e1fd0e2c9d67"]
         }]
       }
