@@ -137,6 +137,11 @@ CANVAS_EXTERNAL_TOOLS = {
             'subaccounts': ['uwcourse:seattle:interdisc-undergrad-prog:train:']
         }
     ],
+    'uw_rttlinfo': [
+        {
+            'ext_id': '213231',
+        }
+    ],
     'uw_zoom': [
         {
             'ext_id': '83805',
