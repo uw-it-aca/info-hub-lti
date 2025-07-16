@@ -29,6 +29,8 @@ database:
 
 repo: infohub
 instance: test
+namespace:
+  enabled: true
 
 memcached:
   enabled: true
