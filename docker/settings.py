@@ -5,6 +5,9 @@ INSTALLED_APPS += [
     'compressor',
 ]
 
+RTTL_API_KEY = os.getenv('RTTL_API_KEY')
+RTTL_API_URL = os.getenv('RTTL_API_URL')
+
 COMPRESS_ENABLED = True
 COMPRESS_OFFLINE = True
 COMPRESS_ROOT = '/static/'
