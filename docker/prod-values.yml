@@ -33,6 +33,8 @@ database:
 
 repo: infohub
 instance: prod
+namespace:
+  enabled: true
 
 memcached:
   enabled: true
