@@ -145,7 +145,7 @@ class InfoHubLaunchView(BLTILaunchView):
 def _handle_hub_status(hub_status):
     """Handle the hub status data and return boolean values"""
 
-    if not hub_status:
+    if hub_status is None:
         return False, False
 
     if 'error' in hub_status and hub_status.get('status') == 'unavailable':
