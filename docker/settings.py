@@ -61,79 +61,87 @@ CANVAS_EXTERNAL_TOOLS = {
     ],
     'uw_panopto_scheduler': [
         {
-            'ext_id': '25694',
+            'ext_id': '214645',
             'subaccounts': ['uwcourse:seattle:arts-&-sciences:']
         },
         {
-            'ext_id': '25697',
+            'ext_id': '214704',
             'subaccounts': ['uwcourse:seattle:education:']
         },
         {
-            'ext_id': '25698',
+            'ext_id': '214646',
+            'subaccounts': ['uwcourse:seattle:engineering:']
+        },
+        {
+            'ext_id': '214704',
             'subaccounts': ['uwcourse:seattle:education:']
         },
         {
-            'ext_id': '25700',
+            'ext_id': '214664',
             'subaccounts': ['uwcourse:seattle:information-school:']
         },
         {
-            'ext_id': '25705',
+            'ext_id': '214659',
             'subaccounts': ['uwcourse:seattle:medicine:']
         },
         {
-            'ext_id': '25708',
+            'ext_id': '214647',
             'subaccounts': ['uwcourse:seattle:public-health:']
         },
         {
-            'ext_id': '25703',
+            'ext_id': '214705',
             'subaccounts': ['uwcourse:seattle:interschool-or-col:']
         },
         {
-            'ext_id': '25699',
+            'ext_id': '214653',
             'subaccounts': ['uwcourse:seattle:environment:']
         },
         {
-            'ext_id': '23909',
+            'ext_id': '214669',
             'subaccounts': ['uwcourse:seattle:business-school:']
         },
         {
-            'ext_id': '25706',
+            'ext_id': '214661',
             'subaccounts': ['uwcourse:seattle:nursing:']
         },
         {
-            'ext_id': '25707',
+            'ext_id': '214654',
             'subaccounts': ['uwcourse:seattle:pharmacy:']
         },
         {
-            'ext_id': '25695',
+            'ext_id': '214703',
             'subaccounts': ['uwcourse:seattle:built-environments:']
         },
         {
-            'ext_id': '25696',
+            'ext_id': '214648',
             'subaccounts': ['uwcourse:seattle:dentistry:']
         },
         {
-            'ext_id': '25702',
+            'ext_id': '214656',
             'subaccounts': ['uwcourse:seattle:interdisc-graduate-progr:']
         },
         {
-            'ext_id': '25704',
+            'ext_id': '214699',
+            'subaccounts': ['uwcourse:seattle:interdisc-undergrad-prog:']
+        },
+        {
+            'ext_id': '214655',
             'subaccounts': ['uwcourse:seattle:law:']
         },
         {
-            'ext_id': '25710',
+            'ext_id': '214657',
             'subaccounts': ['uwcourse:seattle:social-work:']
         },
         {
-            'ext_id': '25701',
+            'ext_id': '214658',
             'subaccounts': ['uwcourse:seattle:int-col:']
         },
         {
-            'ext_id': '25709',
+            'ext_id': '214660',
             'subaccounts': ['uwcourse:seattle:pub-pol-&-gov:']
         },
         {
-            'ext_id': '44317',
+            'ext_id': '214696',
             'subaccounts': ['uwcourse:seattle:interdisc-undergrad-prog:train:']
         }
     ],
