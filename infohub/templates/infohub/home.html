@@ -277,7 +277,7 @@
               </div>
             </li>
             {% endif %}
-            {% if uw_rttlinfo_href %}
+            {% if uw_rttlinfo_href and rttl_api_available %}
             <li class="list-group-item">
               <h4 class="h6 m-0">
                 <a href="{{ uw_rttlinfo_href }}" class="d-inline-block " target="_top">JupyterHub for Teaching & Learning</a>
@@ -584,12 +584,14 @@
               <p class="m-0 font-weight-light">Learn more and follow links to Panopto documentation of key viewing features.</p>
             </li>
 
+            {% if rttl_hub_available %}
             <li class="list-group-item">
               <h4 class="h6 m-0"><a
                   href="{{ uw_rttlinfo_href }}"
-                  target="_blank" class="d-inline-block">View JupyterHub status</a></h4>
-              <p class="m-0 font-weight-light">See availability and status of UW-IT JupyterHub for Teaching & Learning</p>
+                  target="_blank" class="d-inline-block">Access Course JupyterHub</a></h4>
+              <p class="m-0 font-weight-light">Status information and access URL for your course UW-IT JupyterHub</p>
             </li>
+            {% endif %}
 
           </ul>
         </div>
