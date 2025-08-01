@@ -48,12 +48,12 @@ CANVAS_EXTERNAL_TOOLS = {
     ],
     'uw_grade_scale': [
         {
-            'ext_id': '13050',
+            'ext_id': '214644',
         }
     ],
     'uw_classlist': [
         {
-            'ext_id': '37913',
+            'ext_id': '214724',
             'subaccounts': ['uwcourse:']
         }
     ],
