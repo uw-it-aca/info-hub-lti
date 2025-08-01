@@ -39,7 +39,7 @@ class InfoHubLaunchView(BLTILaunchView):
 
         # Fetch RTTL API data and check for hub deployment status
         hub_status = self._fetch_hub_status()
-        context['rttl_hub_available'], context['rttl_api_available'] = \
+        context['rttl_api_available'], context['rttl_hub_available'] = \
             _handle_hub_status(hub_status)
 
         default_href_spec = ('https://{canvas_api_domain}' +
@@ -145,7 +145,7 @@ class InfoHubLaunchView(BLTILaunchView):
 def _handle_hub_status(hub_status):
     """Handle the hub status data and return boolean values"""
 
-    if not hub_status:
+    if hub_status is None:
         return False, False
 
     if 'error' in hub_status and hub_status.get('status') == 'unavailable':
