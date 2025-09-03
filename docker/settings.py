@@ -150,7 +150,7 @@ CANVAS_EXTERNAL_TOOLS = {
     ],
     'uw_rttlinfo': [
         {
-            'ext_id': '214314',
+            'ext_id': '215319',
         }
     ],
     'uw_zoom': [
