@@ -43,17 +43,17 @@ DETECT_USER_AGENTS = {
 CANVAS_EXTERNAL_TOOLS = {
     'uw_groups': [
         {
-            'ext_id': '31485'
+            'ext_id': '214943'
         }
     ],
     'uw_grade_scale': [
         {
-            'ext_id': '13050',
+            'ext_id': '214644',
         }
     ],
     'uw_classlist': [
         {
-            'ext_id': '37913',
+            'ext_id': '214724',
             'subaccounts': ['uwcourse:']
         }
     ],
