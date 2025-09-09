@@ -68,6 +68,10 @@ externalSecrets:
           property: blti-aes-key
         - name: blti-aes-iv
           property: blti-aes-iv
+        - name: rttl-api-key
+          property: rttl-api-key
+        - name: rttl-api-url
+          property: rttl-api-url
     - name: infohub.canvas.uw.edu-lti-keys
       externalKey: infohub/prod/lti-keys
       data:
@@ -93,6 +97,14 @@ environmentVariablesSecrets:
     name: BLTI_AES_IV
     secretName: infohub.canvas.uw.edu-secrets
     secretKey: blti-aes-iv
+  rttlApiKey:
+    name: RTTL_API_KEY
+    secretName: infohub.canvas.uw.edu-secrets
+    secretKey: rttl-api-key
+  rttlApiUrl:
+    name: RTTL_API_URL
+    secretName: infohub.canvas.uw.edu-secrets
+    secretKey: rttl-api-url
 
 mountedSecrets:
   enabled: true
