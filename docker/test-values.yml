@@ -29,6 +29,8 @@ database:
 
 repo: infohub
 instance: test
+namespace:
+  enabled: true
 
 memcached:
   enabled: true
@@ -62,6 +64,10 @@ externalSecrets:
           property: blti-aes-key
         - name: blti-aes-iv
           property: blti-aes-iv
+        - name: rttl-api-key
+          property: rttl-api-key
+        - name: rttl-api-url
+          property: rttl-api-url
     - name: test-infohub.canvas.uw.edu-lti-keys
       externalKey: infohub/test/lti-keys
       data:
@@ -87,6 +93,14 @@ environmentVariablesSecrets:
     name: BLTI_AES_IV
     secretName: test-infohub.canvas.uw.edu-secrets
     secretKey: blti-aes-iv
+  rttlApiKey:
+    name: RTTL_API_KEY
+    secretName: test-infohub.canvas.uw.edu-secrets
+    secretKey: rttl-api-key
+  rttlApiUrl:
+    name: RTTL_API_URL
+    secretName: test-infohub.canvas.uw.edu-secrets
+    secretKey: rttl-api-url
 
 mountedSecrets:
   enabled: true
@@ -117,6 +131,7 @@ configmaps:
           "public_key_file": "/lti/keys/public-key-1.key",
           "deployment_ids": ["210511:3bc8ed0c9ea4aa8abb5ce6bf4693e1fd0e2c9d67",
                              "206138:82ea3323587ae330766ae046461fd35c747ed747",
-                             "208226:3bc8ed0c9ea4aa8abb5ce6bf4693e1fd0e2c9d67"]
+                             "208226:3bc8ed0c9ea4aa8abb5ce6bf4693e1fd0e2c9d67",
+                             "212931:3bc8ed0c9ea4aa8abb5ce6bf4693e1fd0e2c9d67"]
         }]
       }
