@@ -1,6 +1,6 @@
 # info-hub-lti
 
-[![Build Status](https://github.com/uw-it-aca/info-hub-lti/workflows/Build%2C%20Test%20and%20Deploy/badge.svg?branch=main)](https://github.com/uw-it-aca/info-hub-lti/actions)
+[![Build Status](https://github.com/uw-it-aca/info-hub-lti/workflows/Build%2C%20Test%20and%20Deploy/badge.svg)](https://github.com/uw-it-aca/info-hub-lti/actions)
 
 
 ## Description
@@ -19,4 +19,4 @@ sequence by visiting:
 ```
     http://your-host:8000/blti/dev
 ```
-from your brower.
+from your browser.
