@@ -30,7 +30,7 @@ setup(
         'An LTI application that displays resources and tools in Canvas'),
     long_description=README,
     url='https://github.com/uw-it-aca/info-hub-lti',
-    author="UW-IT T&LS",
+    author="UW-IT Student & Educational Technology Services",
     author_email="aca-it@uw.edu",
     classifiers=[
         'Environment :: Web Environment',
