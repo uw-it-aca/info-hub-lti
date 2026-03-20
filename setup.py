@@ -19,7 +19,7 @@ setup(
     packages=['infohub'],
     include_package_data=True,
     install_requires=[
-        'Django~=4.2',
+        'Django~=5.2',
         'django-blti~=3.0',
         'UW-RestClients-Canvas~=1.2',
         'uw-memcached-clients~=1.0',
@@ -30,7 +30,7 @@ setup(
         'An LTI application that displays resources and tools in Canvas'),
     long_description=README,
     url='https://github.com/uw-it-aca/info-hub-lti',
-    author="UW-IT Student & Educational Technology Services",
+    author="UWIT Student & Educational Technology Services",
     author_email="aca-it@uw.edu",
     classifiers=[
         'Environment :: Web Environment',
