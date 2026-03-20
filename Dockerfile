@@ -1,6 +1,6 @@
-ARG DJANGO_CONTAINER_VERSION=2.0.8
+ARG DJANGO_CONTAINER_VERSION=3.0.2
 
-FROM us-docker.pkg.dev/uwit-mci-axdd/containers/django-container:${DJANGO_CONTAINER_VERSION} as app-container
+FROM us-docker.pkg.dev/uwit-mci-axdd/containers/django-container:${DJANGO_CONTAINER_VERSION} AS app-container
 
 ADD --chown=acait:acait . /app/
 ADD --chown=acait:acait docker/ /app/project/
@@ -13,7 +13,7 @@ RUN . /app/bin/activate && pip install nodeenv && nodeenv -p && \
 RUN . /app/bin/activate && python manage.py compress -f && \
   python manage.py collectstatic --noinput
 
-FROM us-docker.pkg.dev/uwit-mci-axdd/containers/django-test-container:${DJANGO_CONTAINER_VERSION} as app-test-container
+FROM us-docker.pkg.dev/uwit-mci-axdd/containers/django-test-container:${DJANGO_CONTAINER_VERSION} AS app-test-container
 
 ENV NODE_PATH=/app/lib/node_modules
 
