@@ -181,7 +181,7 @@ CANVAS_EXTERNAL_TOOLS = {
     ],
     'uw_coda': [
         {
-            'href_spec': 'https://coda.uw.edu/#{course_sis_id}',
+            'ext_id': '230669',
             'subaccounts': ['uwcourse:']
         }
     ],
