@@ -181,7 +181,7 @@ CANVAS_EXTERNAL_TOOLS = {
     ],
     'uw_coda': [
         {
-            'ext_id': '230669',
+            'ext_id': '230670',
             'subaccounts': ['uwcourse:']
         }
     ],
