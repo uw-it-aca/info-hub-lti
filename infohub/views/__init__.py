@@ -2,14 +2,12 @@
 # SPDX-License-Identifier: Apache-2.0
 
 
-from django.conf import settings
-from django.shortcuts import redirect
-from blti import BLTIException
-from blti.views import BLTILaunchView
-from blti.validators import Roles
-from uw_canvas.models import CanvasCourse
-import urllib3
 import json
+
+import urllib3
+from blti.views import BLTILaunchView
+from django.conf import settings
+from uw_canvas.models import CanvasCourse
 
 
 class InfoHubLaunchView(BLTILaunchView):
@@ -70,8 +68,8 @@ class InfoHubLaunchView(BLTILaunchView):
 
         context = {}
         ext_id = conf.get('ext_id', None)
-        context['{}_ext_id'.format(tool)] = ext_id
-        context['{}_href'.format(tool)] = conf.get(
+        context[f'{tool}_ext_id'] = ext_id
+        context[f'{tool}_href'] = conf.get(
                 'href_spec', default_spec).format(
                     ext_id=ext_id,
                     canvas_course_id=self.blti.canvas_course_id,
@@ -137,6 +135,7 @@ class InfoHubLaunchView(BLTILaunchView):
                 'status': 'unavailable'
             }
 
+        # ruff: noqa: BLE001
         except Exception as e:
             print(f"RTTL API error: {e}")
             return {'error': 'Unable to fetch hub status data'}

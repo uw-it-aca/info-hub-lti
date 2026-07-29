@@ -3,8 +3,8 @@
 
 
 from django.urls import re_path
-from infohub.views import InfoHubLaunchView
 
+from infohub.views import InfoHubLaunchView
 
 urlpatterns = [
     re_path(r'^$', InfoHubLaunchView.as_view(), name="lti-launch"),
