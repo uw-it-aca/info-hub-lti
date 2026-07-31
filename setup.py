@@ -19,9 +19,9 @@ setup(
     packages=['infohub'],
     include_package_data=True,
     install_requires=[
-        'Django~=5.2',
+        'django~=5.2',
         'django-blti~=3.0',
-        'UW-RestClients-Canvas~=1.2',
+        'uw-restclients-canvas~=1.2',
         'uw-memcached-clients~=1.0',
         'django-compressor',
     ],
