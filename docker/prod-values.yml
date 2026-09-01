@@ -21,6 +21,12 @@ ingress:
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt
 
+gateway:
+  enabled: true
+  hostnames:
+    - infohub.canvas.uw.edu
+  maxRequestSize: 1Mi
+
 lifecycle:
   enabled: true
   preStop:
