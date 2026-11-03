@@ -135,7 +135,6 @@ class InfoHubLaunchView(BLTILaunchView):
                 'status': 'unavailable'
             }
 
-        # ruff: noqa: BLE001
         except Exception as e:
             print(f"RTTL API error: {e}")
             return {'error': 'Unable to fetch hub status data'}
