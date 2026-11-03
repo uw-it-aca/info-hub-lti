@@ -1,0 +1,61 @@
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "Information-Hub-LTI"
+dynamic = ["version"]
+description = "LTI application that displays resources and tools in Canvas"
+readme = "README.md"
+license = "Apache-2.0"
+authors = [
+    {name = "UWIT Student & Educational Technology Services", email = "aca-it@uw.edu"}
+]
+classifiers = [
+    "Environment :: Web Environment",
+    "Framework :: Django",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+]
+dependencies = [
+    "django~=5.2",
+    "django-blti~=3.0",
+    "uw-restclients-canvas~=1.2",
+    "uw-memcached-clients~=1.0",
+    "django-compressor",
+]
+
+[project.optional-dependencies]
+dev = [
+    "ruff",
+]
+
+[tool.setuptools]
+packages = ["infohub"]
+include-package-data = true
+
+[tool.setuptools.dynamic]
+version = {file = "infohub/VERSION"}
+
+[tool.ruff]
+line-length = 88
+exclude = [
+]
+
+[tool.ruff.lint]
+ignore = [
+    "BLE001",  # allow broad Exception catches
+]
+
+[tool.coverage.run]
+source = ["infohub"]
+parallel = true
+omit = [
+]
+
+[tool.coverage.paths]
+source = [
+    "infohub/",
+    "/app/infohub/",
+]
