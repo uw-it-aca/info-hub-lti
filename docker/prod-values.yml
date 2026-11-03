@@ -6,21 +6,6 @@ targetAverageUtilization: 100
 affinity:
    podsSpanNodes: true
 
-ingress:
-  enabled: true
-  tls:
-    myuw:
-      secretName: infohub.canvas.uw.edu-ingress-cert
-      hosts:
-        - infohub.canvas.uw.edu
-  hosts:
-    myuw:
-      host: infohub.canvas.uw.edu
-      paths:
-        - "/"
-  annotations:
-    cert-manager.io/cluster-issuer: letsencrypt
-
 gateway:
   enabled: true
   hostnames:
