@@ -93,17 +93,6 @@
             {% endif %}
             <!-- end instructor/admin check -->
 
-            <li class="list-group-item">
-              <h4 class="h6 m-0">
-                <a href="https://itconnect.uw.edu/learn/tools/canvas/canvas-help-for-instructors/getting-started/canvas-course-template/"
-                  target="_blank" class="d-inline-block ">Apply Templates</a>
-                  <path fill-rule="evenodd"
-                    d="M.102 2.223A3.004 3.004 0 0 0 3.78 5.897l6.341 6.252A3.003 3.003 0 0 0 13 16a3 3 0 1 0-.851-5.878L5.897 3.781A3.004 3.004 0 0 0 2.223.1l2.141 2.142L4 4l-1.757.364L.102 2.223zm13.37 9.019L13 11l-.471.242-.529.026-.287.445-.445.287-.026.529L11 13l.242.471.026.529.445.287.287.445.529.026L13 15l.471-.242.529-.026.287-.445.445-.287.026-.529L15 13l-.242-.471-.026-.529-.445-.287-.287-.445-.529-.026z" />
-                </svg>
-              </h4>
-              <p class="m-0 font-weight-light">View and apply templates that will help create courses that are easy for
-                students to navigate.</p>
-            </li>
             {% if uw_grade_scale_href %}
             <li class="list-group-item">
               <h4 class="h6 m-0">
@@ -327,6 +316,7 @@
                   class="d-inline-block">Teaching@UW website</a></h4>
               <p class="m-0 font-weight-light">Learn best practices for instruction.</p>
             </li>
+            {% if is_tacoma %}
             <li class="list-group-item">
               <h4 class="h6 m-0">
                 <a href="https://tacoma.uw.edu/digital-learning/topics-toolkits"
@@ -336,6 +326,7 @@
               <p class="m-0 font-weight-light">Explore new topics and toolkits to advance your knowledge, improve your
                 course, and enhance the online learning experience for your students.</p>
             </li>
+            {% endif %}
           </ul>
         </div>
 
@@ -359,6 +350,7 @@
               <p class="m-0 font-weight-light">Fully-online, asynchronous workshop designed to enhance your digital
                 course design and digital pedagogy skill set.</p>
             </li>
+            {% if is_tacoma %}
             <li class="list-group-item">
               <h4 class="h6 m-0"><a href="https://www.tacoma.uw.edu/digital-learning/hybrid-and-online-teaching-certification-program" target="_blank"
                   class="d-inline-block">Hybrid and Online teaching Certification Program <span
@@ -366,6 +358,7 @@
               <p class="m-0 font-weight-light">Learn about developing an engaging, pedagogically sound online or hybrid
                 course in Canvas.</p>
             </li>
+            {% endif %}
           </ul>
         </div>
 
